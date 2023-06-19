@@ -46,6 +46,7 @@ const Navbar = () => {
                                         query: { topic: topic.id }
                                     }
                                 }
+                                criterion={`de ${topic.name}`}
                                 className="text-xl  hover:text-red-200">
                                     {topic.name}
                             </Link>

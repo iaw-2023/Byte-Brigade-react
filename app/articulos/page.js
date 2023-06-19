@@ -18,10 +18,6 @@ function Page () {
             const author = searchParams.get('author');
             const topic = searchParams.get('topic');
 
-            console.log(topic);
-
-            console.log(topic);
-
             if (author) {
                 url = `${url}author=${author}`;
                 if (topic) {
@@ -55,7 +51,7 @@ function Page () {
         <main className="container mx-auto space-y-12">
             <div className="flex flex-col w-full lg:w-3/4 mt-10 p-4 gap-4">
                 <p className="text-5xl font-extralight text-gray-900">
-                    Artículos
+                    Resultados de búsqueda
                 </p>
                 {
                     (searching || articles.length == 0) && (
@@ -69,7 +65,7 @@ function Page () {
                     articles.map(article => {
                         return (
                             <Link key={article.id} href={`/articulos/${article.id}`}>
-                                <div className="flex flex-col gap-2 mb-2">
+                                <div className="flex flex-col gap-2 my-4">
                                     <div className="text-sm"><TopicTag topic={article.topic} /></div>
                                     <p className="text-3xl text-gray-900">{article.title}</p>
                                 </div>

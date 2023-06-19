@@ -26,7 +26,7 @@ const Page = ({params}) => {
             {article && (
                 <div className="flex flex-col">
                     <article className="flex py-6 flex-col gap-3">
-                        <Link href={`/categorias/${article.topic.id}`}>
+                        <Link href={`/articulos?topic=${article.topic.id}`}>
                             <div className="text-2xl mx-4"><TopicTag topic={article.topic}/></div>
                         </Link>
                         <div className="mx-4 text-2xl"><Teaser teaser={article.teaser}/></div>
@@ -115,10 +115,10 @@ function CommentForm({articleID ,fetchComments}) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="my-2 mb-6 flex flex-col w-full max-w-4xl gap-2 justify-start">
-            <label className="max-w-fit" htmlFor="email">Email</label>
+        <form onSubmit={handleSubmit} className="my-2 mb-6 flex flex-col w-full max-w-4xl gap-2 justify-between">
+            <label className="max-w-fit font-extralight px-1" htmlFor="email">Email</label>
             <input
-                className="rounded-md p-2 grow border border-gray-300 hover:border-gray-400 active:border-gray-500"
+                className="rounded-md p-2 grow border border-red-200 hover:bg-red-500 focus:outline-none focus:border-red-300 focus:border-2"
                 type="email"
                 id="email"
                 value={email}
@@ -128,7 +128,7 @@ function CommentForm({articleID ,fetchComments}) {
                 required
             />
             <textarea
-                className="grow border p-2 border-gray-300 resize-none"
+                className="rounded-md grow border p-2 border-red-200 hover:bg-red-500  focus:outline-none focus:border-red-300 focus:border-2 resize-none"
                 name="text"
                 id="text"
                 value={text}
@@ -142,7 +142,7 @@ function CommentForm({articleID ,fetchComments}) {
                 <button className="bg-red-400 hover:bg-red-500 active:bg-red-600 text-white font-medium max-w-fit py-2 px-6 border border-gray-300 rounded-lg" type="submit" disabled={isLoading}>
                     Mandar fruta
                 </button>
-                {errorMessage && <p>{errorMessage}</p>}
+                {errorMessage && <p className="text-red-600 text-xs italic py-1 font-extralight">{errorMessage}</p>}
             </div>
         </form>
     );

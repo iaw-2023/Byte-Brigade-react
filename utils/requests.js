@@ -1,4 +1,4 @@
-const URL = 'https://el-corchazo.vercel.app/rest';
+const URL = 'https://el-corchazo-admin.vercel.app/rest';
 
 const requests = {
     articles: {

@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'El Corchazo',
   description: 'Esto no es un pedido de ayuda.',
+  favicon: '/favicon.ico'
 }
 
 export default function RootLayout({ children }) {
