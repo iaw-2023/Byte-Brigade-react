@@ -20,16 +20,26 @@ function Page() {
     console.log(topics);
 
     return (
-        <main className="container mx-auto px-2">
-            <h2>Categorías</h2>
-            <div className="grid cols gap-4">
+        <main className="container mx-auto space-y-12">
+            <h2 className="text-5xl font-extralight text-gray-900 mt-10 p-4">Categorías</h2>
+            <div className="flex flex-col lg:grid grid-cols-4 gap-4">
                 {
                     topics &&
                     topics.map(topic => {
                         return (
-                            <div key={topic.id} className="rounded-xl flex justify-center lg:w-96 w-full p-12" style={{backgroundColor: getColor(topic.id)}}>
-                                <Link classNane="text-white text-3xl font-extrabold text-center" href='/'><span className="text-white text-3xl font-extrabold text-center">{topic.name}</span></Link>
-                            </div>
+                            <Link
+                                key={topic.id}
+                                href= {
+                                    {
+                                        pathname: '/articulos',
+                                        query: { topic: topic.id }
+                                    }
+                                }
+                            >
+                                <div className="flex border-4 border-white hover:border-red-100  lg:h-full rounded-sm justify-center p-12 items-center" style={{backgroundColor: getColor(topic.id)}}>
+                                    <p className="lg:w-96 text-white uppercase text-3xl font-extrabold text-center">{topic.name}</p>
+                                </div>
+                            </Link>
                         );
                     })
                 }

@@ -42,7 +42,7 @@ const Navbar = () => {
                                 key={topic.id}
                                 href={
                                     {
-                                        pathname: '/articles',
+                                        pathname: '/articulos',
                                         query: { topic: topic.id }
                                     }
                                 }

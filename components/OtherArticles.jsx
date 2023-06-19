@@ -4,15 +4,15 @@ import Link from "next/link";
 
 const OtherArticles = ({articles}) => {
   return (
-    <div className="flex flex-col divide-y w-full lg:w-3/5">
+    <div className="flex flex-col w-full divide-y gap-2 pb-24 lg:w-4/5">
     {
         articles.map(article => {
             return (
-                <Link href={`/articulos/${article.id}`}>
-                    <div className="space-y-2 w-full lg:max-w-max p-3" key={article.key}>
+                <Link key={article.id} href={`/articulos/${article.id}`}>
+                    <div className="space-y-2 w-full p-1 mt-1" >
                         <div className="text-xs"><TopicTag topic={article.topic}/></div>
                         <div className="text-sm"><Teaser teaser={article.teaser} /></div>
-                        <h2 className="text-xl">{article.title}</h2>
+                        <h2 className="text-xl lg:pr-12">{article.title}</h2>
                     </div>
                 </Link>
             );
