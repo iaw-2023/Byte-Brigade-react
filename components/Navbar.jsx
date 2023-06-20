@@ -25,7 +25,7 @@ const Navbar = () => {
 
     return (
         <nav className="bg-gray-950
-        flex justify-start items-baseline p-4 w-full mb-8 space-x-4">
+        flex justify-start items-baseline p-4 w-full mb-8 gap-4">
             <Link href='/'>
                 <h1 className="text-gray-200 hover:text-red-200 font-serif text-4xl ml-1">
                     El Corchazo

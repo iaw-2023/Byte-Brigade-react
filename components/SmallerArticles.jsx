@@ -4,7 +4,7 @@ import getColor from "@/utils/color";
 
 const SmallerArticles = ({articles}) => {
   return (
-    <div className="flex flex-col w-full space-y-4 lg:space-y-0 lg:flex-row justify-center lg:justify-between mx-2">
+    <div className="flex flex-col lg:w-full space-y-4 lg:space-y-0 lg:flex-row justify-center lg:justify-between mx-2">
       {articles.map(article => {
         return (
           <Link key={article.id} href={`/articulos/${article.id}`}>

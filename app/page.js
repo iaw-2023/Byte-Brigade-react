@@ -31,11 +31,13 @@ export default function Home() {
   
   return (
     <main className="container mx-auto space-y-10 my-12">
-      <div className="flex justify-center items-center">
-        <Image className="object-contain mr-4 rounded-full min-w-max shadow-xl" src={sources.fullLogo} width={130} height={130} alt="Logo de El Corchazo"/>
+      <div className="flex w-full mx-auto justify-center items-center gap-4 p-4">
+        <div className="w-72 h-72" style={{position: "relative"}}>
+          <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo"/>
+        </div>
         <div className="flex flex-col items-center space-y-2">
-          <h1 className="text-gray-900 text-8xl text-center font-serif font-semibold">El Corchazo</h1>
-          <span className="text-gray-900 text-3xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
+          <h1 className="text-gray-900 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
+          <span className="text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
         </div>
       </div>
       {mainArticle && <MainArticle article={mainArticle}/>}
