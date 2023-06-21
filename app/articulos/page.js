@@ -48,8 +48,7 @@ function Page () {
 
 
     return (
-        <main className="container mx-auto space-y-12">
-            <div className="flex flex-col w-full lg:w-3/4 mt-10 p-4 gap-4">
+            <div className="flex flex-col min-h-full justify-start lg:w-3/4 mt-10 p-4 gap-4">
                 <p className="text-5xl font-extralight text-gray-900">
                     Resultados de búsqueda
                 </p>
@@ -75,7 +74,6 @@ function Page () {
                 }
                 </div>
             </div>
-        </main>
     );
 }
 

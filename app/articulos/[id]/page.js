@@ -22,7 +22,7 @@ const Page = ({params}) => {
     }, []);
 
     return (
-        <main className="container mx-auto my-12">
+            <>
             {article && (
                 <div className="flex flex-col">
                     <article className="flex py-6 flex-col gap-3">
@@ -57,7 +57,7 @@ const Page = ({params}) => {
                     )
                 }
             </div>
-        </main>
+            </>
     );
 }
 
