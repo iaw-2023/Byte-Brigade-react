@@ -30,7 +30,7 @@ export default function Home() {
   const otherArticles = articles.slice(5);
   
   return (
-    <main className="container mx-auto space-y-10 my-12">
+    <main className="container mx-auto space-y-10 mt-12 mb-10">
       <div className="flex w-full mx-auto justify-center items-center gap-4 p-4">
         <div className="w-72 h-72" style={{position: "relative"}}>
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo"/>

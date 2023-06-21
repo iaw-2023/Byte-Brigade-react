@@ -24,17 +24,16 @@ const Navbar = () => {
     },[]);
 
     return (
-        <nav className="bg-gray-950
-        flex justify-start items-baseline p-4 w-full mb-8 gap-4">
+        <nav id="nav" className="bg-gray-950 flex justify-start items-baseline p-4 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400">
             <Link href='/'>
                 <h1 className="text-gray-200 hover:text-red-200 font-serif text-4xl ml-1">
                     El Corchazo
                 </h1>
             </Link>
-            <div className="uppercase visible lg:hidden text-gray-200 text-2xl font-thin border-2 border-gray-950 hover:border-red-200 hover:text-red-200 px-2 py-1">
+            <div className="uppercase visible lg:hidden text-gray-200 text-2xl font-light hover:text-red-200 px-2 py-1">
                     <Link href="/categorias">Categorías</Link>
             </div>
-            <div className="hidden lg:flex lg:visible justify-start font-thin text-center text-gray-100 gap-4">
+            <div className="hidden lg:flex lg:visible justify-start font-extralight text-center text-gray-100 gap-4">
                 {
                     topics.map(topic => {
                         return (
