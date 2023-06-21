@@ -42,9 +42,15 @@ const Page = ({params}) => {
                 {
                     article && (
                         <>
-                            <ul className="list-disc">
+                            <ul className="list-disc flex flex-col justify-between">
                                 {getMayLike().map((liking, index) => {
-                                    return <li key={index} className="mx-8 list-item text-gray-900 text-lg font-extralight font">{liking}</li>
+                                    return (
+                                        <Link key={index} href={liking.href} target="_blank">
+                                            <li className="mx-8 list-item max-w-max text-gray-900 text-lg py-1 font-extralight">
+                                                <p className="text-gray-900 hover:text-red-500">{liking.text}</p>
+                                            </li>
+                                        </Link>
+                                    );
                                 })}
                             </ul>
                         </>

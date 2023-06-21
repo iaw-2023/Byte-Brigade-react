@@ -37,7 +37,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col items-center space-y-2">
           <h1 className="text-gray-900 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
-          <span className="text-gray-900 text-base sm:text-lg md:text-xl lg:text-2xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
+          <span className="text-gray-900 text-base sm:text-lg md:text-2xl lg:text-4xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
         </div>
       </div>
       {mainArticle && <MainArticle article={mainArticle}/>}

@@ -8,7 +8,7 @@ const MainArticle = ({article}) => {
     let bgColor = getColor(article.topic.id);
 
     return ((
-            <div className="bg-gray-50 hover:bg-gray-100 flex flex-col justify-start p-4 py-14 hover:shadow-lg space-y-2 mx-2">
+            <div className="bg-gray-50 hover:bg-gray-100 flex flex-col justify-start p-4 py-14 hover:shadow-lg space-y-2 mx-2 lg:mx-0">
                 <div className="text-xl">
                     <TopicTag topic={article.topic}/>
                 </div>

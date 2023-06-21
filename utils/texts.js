@@ -19,21 +19,29 @@ const SEE_ALSOS = [
     'La página es pobre, pero un par de giladas más hay'
 ];
 
+function MayLike(text, href) {
+    this.text = text;
+    this.href = href;
+}
+
 const MAY_LIKE = [
-    'Ir a la iglesia',
-    'Plantar un niño',
-    'Hacer una bolucompra',
-    'Pasarme el número de la tarjeta',
-    'Abrazar a tu perro',
-    'Aflojarle a las pepas',
-    'Limpiar la heladera',
-    'Ver si te acordás algo de Laravel',
-    'Abrir un videoclub',
-    'Errarle de grupo de Whatsapp',
-    'Mejorar la técnica de sentadillas',
-    'Sacar al abuelo del lavarropas',
-    'Mandar "RATONES" al 8008',
-    'Comprar algo en Sprayette'
+    new MayLike('Ir a la iglesia', 'https://youtu.be/ubX_aqXctRk'),
+    new MayLike('Plantar un niño', 'https://youtu.be/b3_lVSrPB6w'),
+    new MayLike('Hacer una bolucompra', 'https://youtu.be/IqUN4YdQgVQ'),
+    new MayLike('Pasarme el número de la tarjeta', 'https://youtu.be/Hk3hdu-dB2c'),
+    new MayLike('Abrazar a tu perro', 'https://youtu.be/q6EoRBvdVPQ'),
+    new MayLike('Aflojarle a las pepas', 'https://youtu.be/ZZ5LpwO-An4'),
+    new MayLike('Limpiar la heladera', 'https://youtu.be/I482t6JhL4g'),
+    new MayLike('Ver si te acordás algo de Laravel', 'https://youtu.be/srTqxL_6Ysg'),
+    new MayLike('Abrir un videoclub', 'https://youtu.be/iIY5b1JMvGs'),
+    new MayLike('Errarle de grupo de Whatsapp', 'https://youtu.be/GmSSUr0ppHg'),
+    new MayLike('Mejorar la técnica de sentadillas', 'https://youtu.be/atv8pf0jBNE'),
+    new MayLike('Sacar al abuelo del lavarropas', 'https://youtu.be/sk0ARmuGvjY'),
+    new MayLike('Mandar "RATONES" al 8008', 'https://youtu.be/8Ht0tWrb3HA'),
+    new MayLike('Comprar algo en Sprayette', 'https://youtu.be/8AyVh1_vWYQ'),
+    new MayLike('Ir a la esquina a ver si subió el dólar', 'https://youtu.be/9U4Ha9HQvMo'),
+    new MayLike('Twittear sin hacerte el copado', 'https://clickhole.com/heartbreaking-the-worst-person-you-know-just-made-a-gr-1825121606/'),
+    new MayLike('Preguntarte cómo hiciste para encontrarle un pelo a un huevo', 'https://youtu.be/7MbnSRrwW10?t=693')
 ]
 
 const SEARCHING = [
