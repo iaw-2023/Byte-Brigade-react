@@ -15,8 +15,8 @@ const MainArticle = ({article}) => {
                 <div className="text-2xl lg:text-3xl">
                     <Teaser teaser={article.teaser}/>
                 </div>
-                <div className="text-5xl flex-wrap lg:text-7xl">
-                    <Link href={`/articulos/${article.id}`}><h2>{article.title}</h2></Link>
+                <div className="text-4xl sm:text-5xl flex-wrap lg:text-7xl">
+                    <Link href={`/articulos/${article.id}`}><h2 className="break-words">{article.title}</h2></Link>
                 </div>
             </div>
         )

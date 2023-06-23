@@ -13,7 +13,7 @@ const SmallerArticles = ({articles}) => {
                 <TopicTag topic={article.topic} />
               </div>
               <div className="text-gray-600 uppercase">{article.teaser}</div>
-              <h2 className="text-2xl min-w-fit">{article.title}</h2>
+              <h2 className="text-xl sm:text-2xl min-w-fit">{article.title}</h2>
             </div>
           </Link>
         );

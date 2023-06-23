@@ -12,7 +12,7 @@ const OtherArticles = ({articles}) => {
                     <div className="space-y-2 w-full p-1 mt-1" >
                         <div className="text-xs"><TopicTag topic={article.topic}/></div>
                         <div className="text-sm"><Teaser teaser={article.teaser} /></div>
-                        <h2 className="text-xl lg:pr-12">{article.title}</h2>
+                        <h2 className="text-lg sm:text-xl lg:pr-12">{article.title}</h2>
                     </div>
                 </Link>
             );
