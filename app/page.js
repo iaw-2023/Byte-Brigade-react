@@ -30,8 +30,8 @@ export default function Home() {
   const otherArticles = articles.slice(5);
   
   return (
-    <main className="container mx-auto space-y-10 mt-12 mb-10">
-      <div className="flex w-full mx-auto justify-center items-center gap-4 p-4">
+    <main className="container mx-auto space-y-10">
+      <div className="flex w-full justify-center items-center gap-4 p-4">
         <div className="w-72 h-72" style={{position: "relative"}}>
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo"/>
         </div>
@@ -45,7 +45,7 @@ export default function Home() {
       {otherArticles.length > 0 && (
         <div className="mx-2 py-4 space-y-4">
           <div className="font-extralight uppercase text-gray-900 text-3xl">{`${getSeeAlso()}`}</div>
-          <OtherArticles articles={otherArticles}/>
+            <OtherArticles articles={otherArticles}/>
         </div>
       )}
     </main>

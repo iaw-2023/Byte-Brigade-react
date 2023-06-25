@@ -20,31 +20,31 @@ function Page() {
     console.log(topics);
 
     return (
-        <main className="container mx-auto space-y-12">
-            <h2 className="text-5xl font-extralight text-gray-900 mt-10 p-4">Categorías</h2>
-            <div className="flex flex-col lg:grid grid-cols-4 gap-4">
-                {
-                    topics &&
-                    topics.map(topic => {
-                        return (
-                            <Link
-                                key={topic.id}
-                                href= {
-                                    {
-                                        pathname: '/articulos',
-                                        query: { topic: topic.id }
+            <>
+                <h2 className="text-5xl font-extralight text-gray-900 mb-10">Categorías</h2>
+                <div className="flex flex-col w-full lg:flex-row lg:flex-wrap gap-4 justify-center">
+                    {
+                        topics &&
+                        topics.map(topic => {
+                            return (
+                                <Link
+                                    key={topic.id}
+                                    href= {
+                                        {
+                                            pathname: '/articulos',
+                                            query: { topic: topic.id }
+                                        }
                                     }
-                                }
-                            >
-                                <div className="flex border-4 border-white hover:border-red-100  lg:h-full rounded-sm justify-center p-12 items-center" style={{backgroundColor: getColor(topic.id)}}>
-                                    <p className="lg:w-96 text-white uppercase text-3xl font-extrabold text-center">{topic.name}</p>
-                                </div>
-                            </Link>
-                        );
-                    })
-                }
-            </div>
-        </main>
+                                >
+                                    <div className="flex grow border-4 border-white hover:border-red-100 rounded-sm justify-center p-12 items-center lg:min-h-80 lg:h-full" style={{backgroundColor: getColor(topic.id)}}>
+                                        <p className="lg:w-96 text-white uppercase text-3xl font-extrabold text-center">{topic.name}</p>
+                                    </div>
+                                </Link>
+                            );
+                        })
+                    }
+                </div>
+            </>
     );
 }
 
