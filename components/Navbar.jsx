@@ -33,7 +33,7 @@ const Navbar = () => {
     }
 
     return (
-        <nav id="nav" className="bg-gray-950 flex justify-start items-baseline p-4 w-screen mb-8 gap-4 border-0 border-b-2 border-gray-400">
+        <nav id="nav" className="bg-gray-950 flex justify-start items-baseline p-4 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400">
             <Link href='/'>
                 <h1 className="text-gray-200 min-w-max hover:text-red-200 font-serif text-4xl ml-1">
                     El Corchazo
