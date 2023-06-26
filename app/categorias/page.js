@@ -21,8 +21,8 @@ function Page() {
 
     return (
             <>
-                <h2 className="text-5xl font-extralight text-gray-900 mb-10">Categorías</h2>
-                <div className="flex flex-col w-full lg:flex-row lg:flex-wrap gap-4 justify-center">
+                <h2 className="text-5xl font-extralight text-gray-900 mb-6 p-2">Categorías</h2>
+                <div className="flex flex-col w-full lg:flex-row lg:flex-wrap gap-4 justify-center p-4">
                     {
                         topics &&
                         topics.map(topic => {

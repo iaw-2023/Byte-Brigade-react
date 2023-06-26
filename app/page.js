@@ -36,7 +36,7 @@ export default function Home() {
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo"/>
         </div>
         <div className="flex flex-col items-center space-y-2">
-          <h1 className="text-gray-900 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
+          <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
           <span className="text-gray-900 text-base sm:text-lg md:text-2xl lg:text-4xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
         </div>
       </div>

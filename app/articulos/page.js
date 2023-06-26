@@ -48,32 +48,35 @@ function Page () {
 
 
     return (
-            <div className="flex flex-col min-h-full justify-start lg:w-3/4 p-4 gap-4">
-                <p className="text-5xl font-extralight text-gray-900">
-                    Resultados de búsqueda
-                </p>
-                {
-                    (searching || articles.length == 0) && (
-                        <p className="text-2xl text-gray-900">
-                            { searching? getSearching() : getNotFound() }
-                        </p>
-                    )
-                }
-                <div className="flex flex-col gap-2 divide-y w-full max-w-3/4">
-                {
-                    articles.map(article => {
-                        return (
-                            <Link key={article.id} href={`/articulos/${article.id}`}>
-                                <div className="flex flex-col gap-2 my-4">
-                                    <div className="text-sm"><TopicTag topic={article.topic} /></div>
-                                    <p className="text-3xl text-gray-900">{article.title}</p>
-                                </div>
-                            </Link>
-                        );
-                    })
-                }
+            <>
+                <h2 className="text-5xl font-extralight text-gray-900 p-2">
+                        Resultados de búsqueda
+                </h2>
+                <div className="flex flex-col justify-start lg:w-3/4 p-4 gap-4">
+                    
+                    {
+                        (searching || articles.length == 0) && (
+                            <p className="text-2xl text-gray-900">
+                                { searching? getSearching() : getNotFound() }
+                            </p>
+                        )
+                    }
+                    <div className="flex flex-col gap-1 divide-y w-full justify-center">
+                    {
+                        articles.map(article => {
+                            return (
+                                <Link key={article.id} href={`/articulos/${article.id}`}>
+                                    <div className="flex flex-col gap-2 my-4">
+                                        <div className="text-sm"><TopicTag topic={article.topic} /></div>
+                                        <p className="text-xl text-gray-900">{article.title}</p>
+                                    </div>
+                                </Link>
+                            );
+                        })
+                    }
+                    </div>
                 </div>
-            </div>
+            </>
     );
 }
 
