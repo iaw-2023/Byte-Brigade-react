@@ -1,4 +1,4 @@
-import getColor from "@/utils/color";
+import getColor from "@/app/lib/color";
 
 const TopicTag = ({topic}) => {
   return (

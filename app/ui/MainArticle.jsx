@@ -1,9 +1,11 @@
 import Link from 'next/link';
-import getColor from '@/utils/color';
+import getColor from '@/app/lib/color';
 import TopicTag from './TopicTag';
 import Teaser from './Teaser';
 
-const MainArticle = ({article}) => {
+export async function MainArticle () {
+
+    
 
     let bgColor = getColor(article.topic.id);
 

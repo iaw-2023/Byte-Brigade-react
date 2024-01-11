@@ -1,11 +1,11 @@
 'use client';
 
-import requests from '@/utils/requests';
+import requests from '@/app/lib/requests';
 import {useEffect, useState} from 'react';
 import { useSearchParams } from 'next/navigation'
-import { getNotFound, getSearching } from '@/utils/texts';
+import { getNotFound, getSearching } from '@/app/lib/texts';
 import axios from 'axios';
-import TopicTag from '@/components/TopicTag';
+import TopicTag from '@/app/ui/TopicTag';
 import Link from 'next/link';
 
 function Page () {

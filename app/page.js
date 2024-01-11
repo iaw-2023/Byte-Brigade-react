@@ -1,14 +1,13 @@
 'use client';
 
 import Image from 'next/image';
-import sources from '@/utils/sources';
-import requests from '@/utils/requests';
-import {getSubtitle, getSeeAlso} from '@/utils/texts';
+import sources from '@/app/lib/sources';
+import requests from '@/app/lib/requests';
+import {getSubtitle, getSeeAlso} from '@/app/lib/texts';
 import {useState, useRef,useEffect} from 'react';
-import axios from 'axios';
-import MainArticle from '@/components/MainArticle';
-import SmallerArticles from '@/components/SmallerArticles';
-import OtherArticles from '@/components/OtherArticles';
+import MainArticle from '@/app/ui/MainArticle';
+import SmallerArticles from '@/app/ui/SmallerArticles';
+import OtherArticles from '@/app/ui/OtherArticles';
 
 export default function Home() {
   const [articles, setArticles] = useState([]);

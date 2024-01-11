@@ -2,9 +2,9 @@
 
 import axios from 'axios';
 import {useState, useEffect} from 'react';
-import { shuffleArray } from '@/utils/functions';
+import { shuffleArray } from '@/app/lib/utils';
 import Link from 'next/link';
-import requests from '@/utils/requests';
+import requests from '@/app/lib/requests';
 
 
 const Navbar = () => {

@@ -1,8 +1,8 @@
 'use client';
 
-import requests from '@/utils/requests';
+import requests from '@/app/lib/requests';
 import {useState, useEffect} from 'react';
-import getColor from '@/utils/color';
+import getColor from '@/app/lib/color';
 import axios from 'axios';
 import Link from 'next/link';
 
@@ -16,8 +16,6 @@ function Page() {
         };
         fetchTopics();
     }, []);
-
-    console.log(topics);
 
     return (
             <>

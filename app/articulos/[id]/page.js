@@ -2,10 +2,10 @@
 
 import {useState, useEffect} from 'react';
 import Link from 'next/link';
-import TopicTag from '@/components/TopicTag';
-import Teaser from '@/components/Teaser';
-import requests from "@/utils/requests";
-import { getMayLike } from '@/utils/texts';
+import TopicTag from '@/app/ui/TopicTag';
+import Teaser from '@/app/ui/Teaser';
+import requests from "@/app/lib/requests";
+import { getMayLike } from '@/app/lib/texts';
 import axios from "axios";
 
 const Page = ({params}) => {
