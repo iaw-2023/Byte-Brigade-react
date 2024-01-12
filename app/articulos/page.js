@@ -4,7 +4,7 @@ import PaginationButton from '../ui/articulos/PaginationButton';
 
 async function Page ({ searchParams }) {
     const {author, topic, page} = searchParams;
-    const {articles, totalPages} = await fetchArticles(page, author, topic);
+    const {articles, totalPages, totalArticles} = await fetchArticles(page, author, topic);
     const currentPage = Number(page) || 1;
 
     function isNextButtonDisabled() {
@@ -21,10 +21,14 @@ async function Page ({ searchParams }) {
                     {author || topic? "Resultado de búsqueda" : "Todos los artículos"}
                 </h2>
                 <ArticleList key={currentPage + author + topic} articles={articles} />
-                <div className="flex justify-between md:w-4/6 mt-4">
-                    <PaginationButton type={'prev'} currentPage={currentPage} disabled={isPrevButtonDisabled()}/>
-                    <PaginationButton type={'next'} currentPage={currentPage} disabled={isNextButtonDisabled()} />
-                </div>
+                {
+                    (totalArticles > articles.length) && (
+                        <div className="flex justify-between md:w-4/6 mt-4">
+                            <PaginationButton type={'prev'} currentPage={currentPage} disabled={isPrevButtonDisabled()}/>
+                            <PaginationButton type={'next'} currentPage={currentPage} disabled={isNextButtonDisabled()} />
+                        </div>
+                    )
+                }
             </div>
     );
 }

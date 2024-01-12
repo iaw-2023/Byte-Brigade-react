@@ -1,36 +1,29 @@
 'use client';
 
-import axios from 'axios';
 import {useState, useEffect} from 'react';
 import { shuffleArray } from '@/app/lib/utils';
 import Link from 'next/link';
-import requests from '@/app/lib/requests';
+import { fetchTopics } from '../lib/data';
 
 
-const Navbar = () => {
+export default function Navbar() {
     const [topics, setTopics] = useState([]);
     const [showDropdown, setShowDropdown] = useState(false);
-
-    const shownTopics = topics.slice(0,5);
-    const hiddenTopics = topics.slice(5);
-
-    useEffect( () => {
-        const fetchTopics = async () => {
-            try {
-                const response = await axios.get(requests.topics);
-                let newTopics = response.data.data;
-                setTopics(shuffleArray(newTopics));
-            } catch (error) {
-                console.log(error);
-            }
-        }
-
-        fetchTopics();
-    },[]);
+    
+    useEffect(() => {
+        fetchTopics()
+            .then((topics) => {
+                setTopics(shuffleArray(topics));
+            })
+            .catch(error => console.log(error));
+    }, []);
 
     const handleClick = () => {
         setShowDropdown(sd => !sd);
     }
+
+    const shownTopics = topics.slice(0,5);
+    const hiddenTopics = topics.slice(5);
 
     return (
         <nav id="nav" className="bg-gray-950 flex justify-start items-baseline p-4 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400">
@@ -109,5 +102,3 @@ function DropdownMenu({topics, handleClick}) {
         </div>
     )
 }
-
-export default Navbar

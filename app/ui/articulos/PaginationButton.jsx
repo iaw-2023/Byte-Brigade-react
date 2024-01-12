@@ -16,7 +16,7 @@ export default function PaginationButton({ type, disabled }) {
     }
 
     return (
-        <button disabled={disabled} onClick={handleClick} className="font-serif disabled:text-gray-300 text-gray-950 text-3xl hover:text-red-300">
+        <button disabled={disabled} onClick={handleClick} className="font-serif disabled:text-gray-200 text-gray-950 text-3xl hover:text-red-300">
             {type === "next"? "Siguiente" : "Anterior"}
         </button>
     );

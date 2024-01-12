@@ -2,12 +2,12 @@
 
 import Image from 'next/image';
 import sources from '@/app/lib/sources';
-import requests from '@/app/lib/requests';
 import {getSubtitle, getSeeAlso} from '@/app/lib/texts';
 import MainArticle from '@/app/ui/MainArticle';
 import SmallerArticles from '@/app/ui/SmallerArticles';
 import OtherArticles from '@/app/ui/OtherArticles';
 import { fetchArticles } from './lib/data';
+import Link from 'next/link';
 
 export default async function Home() {
   const {articles, totalPages} = await fetchArticles();
@@ -17,8 +17,8 @@ export default async function Home() {
   const otherArticles = articles.slice(5);
   
   return (
-    <>
-      <div className="flex w-full justify-center items-center gap-4 p-4">
+    <div className="flex flex-col space-y-6">
+      <div className="flex justify-center items-center gap-4 p-4">
         <div className="w-72 h-72" style={{position: "relative"}}>
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo"/>
         </div>
@@ -27,14 +27,13 @@ export default async function Home() {
           <span className="text-gray-950 text-base sm:text-lg md:text-2xl lg:text-4xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
         </div>
       </div>
-      {mainArticle && <MainArticle article={mainArticle}/>}
-      {smallerArticles.length > 0 && <SmallerArticles articles={smallerArticles}/>}
-      {otherArticles.length > 0 && (
-        <div className="mx-2 py-4 space-y-4">
-          <div className="font-extralight uppercase text-gray-900 text-3xl">{`${getSeeAlso()}`}</div>
-            <OtherArticles articles={otherArticles}/>
-        </div>
-      )}
-    </>
+      <MainArticle article={mainArticle}/>
+      <SmallerArticles articles={smallerArticles}/>
+      <div className="mx-2 py-12 space-y-4">
+        <p className="font-extralight uppercase text-gray-900 text-3xl">{`${getSeeAlso()}`}</p>
+        <OtherArticles articles={otherArticles}/>
+        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="text-red-400 underline hover:text-red-600 font-semibold" href='/articulos'>VER MÁS</Link></p>
+      </div>
+    </div>
   );
 }

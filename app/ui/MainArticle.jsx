@@ -3,9 +3,7 @@ import getColor from '@/app/lib/color';
 import TopicTag from './TopicTag';
 import Teaser from './Teaser';
 
-export async function MainArticle () {
-
-    
+export function MainArticle ({article}) {
 
     let bgColor = getColor(article.topic.id);
 

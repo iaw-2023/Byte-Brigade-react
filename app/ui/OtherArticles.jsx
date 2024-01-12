@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const OtherArticles = ({articles}) => {
   return (
-    <div className="flex flex-col w-full divide-y gap-2 lg:w-4/5 px-2">
+    <div className="flex flex-col w-full divide-y gap-2 lg:w-4/5">
     {
         articles.map(article => {
             return (
