@@ -11,6 +11,7 @@ export default function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
     
     useEffect(() => {
+        console.log("manganeso");
         async function fetchAndSetTopics() {
             const topics = await fetchTopics();
             const shuffledTopics = shuffleArray(topics);

@@ -25,7 +25,6 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
 };
 
 export async function fetchTopics () {
-    noStore();
     try {
         const response = await axios.get(requests.topics);
         return response.data.data;
@@ -43,11 +42,22 @@ export async function fetchArticleById(articleID) {
     }
 }
 
-export async function fetchComments() {
+export async function fetchComments(articleId) {
+    noStore();
     try {
+        console.log("Estamos recuperando");
         const response = await axios.get(requests.comments(articleId));
+        console.log("listo");
         return response.data.data;
     } catch (error) {
-        console.log(error);
+        return {error: `Se produjo un error al intentar obtener los comentarios para el artículo con ID ${articleId}.`};
+    }
+}
+
+export async function postComment(articleId, formData) {
+    try {
+
+    } catch {
+
     }
 }
