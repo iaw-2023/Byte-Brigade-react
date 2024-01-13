@@ -11,11 +11,13 @@ export default function Navbar() {
     const [showDropdown, setShowDropdown] = useState(false);
     
     useEffect(() => {
-        fetchTopics()
-            .then((topics) => {
-                setTopics(shuffleArray(topics));
-            })
-            .catch(error => console.log(error));
+        async function fetchAndSetTopics() {
+            const topics = await fetchTopics();
+            const shuffledTopics = shuffleArray(topics);
+            setTopics(shuffledTopics);
+        }
+
+        fetchAndSetTopics();
     }, []);
 
     const handleClick = () => {

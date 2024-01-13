@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import sources from '@/app/lib/sources';
-import {getSubtitle, getSeeAlso} from '@/app/lib/texts';
+import Subtitle from './ui/Subtitle';
+import SeeAlso from './ui/SeeAlso';
 import MainArticle from '@/app/ui/MainArticle';
 import SmallerArticles from '@/app/ui/SmallerArticles';
 import OtherArticles from '@/app/ui/OtherArticles';
@@ -24,13 +25,13 @@ export default async function Home() {
         </div>
         <div className="flex flex-col items-center space-y-2">
           <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
-          <span className="text-gray-950 text-base sm:text-lg md:text-2xl lg:text-4xl text-center font-serif font-semibold">{articles.length > 0 && getSubtitle()}</span>
+          <Subtitle />
         </div>
       </div>
       <MainArticle article={mainArticle}/>
       <SmallerArticles articles={smallerArticles}/>
       <div className="mx-2 py-12 space-y-4">
-        <p className="font-extralight uppercase text-gray-900 text-3xl">{`${getSeeAlso()}`}</p>
+        <SeeAlso />
         <OtherArticles articles={otherArticles}/>
         <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="text-red-400 underline hover:text-red-600 font-semibold" href='/articulos'>VER MÁS</Link></p>
       </div>

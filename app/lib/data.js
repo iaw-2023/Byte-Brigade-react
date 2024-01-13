@@ -1,7 +1,9 @@
 import requests from "./requests";
 import axios from "axios";
+import { unstable_noStore as noStore } from "next/cache";
 
 export async function fetchArticles(page = 1, author = null, topic = null) {
+    noStore();
     let url = `${requests.articles.index}?page=${page}`;
 
     if (author) {
@@ -23,8 +25,27 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
 };
 
 export async function fetchTopics () {
+    noStore();
     try {
         const response = await axios.get(requests.topics);
+        return response.data.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function fetchArticleById(articleID) {
+    try {
+        const response = await axios.get(requests.articles.fullArticle(articleID));
+        return response.data.data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export async function fetchComments() {
+    try {
+        const response = await axios.get(requests.comments(articleId));
         return response.data.data;
     } catch (error) {
         console.log(error);

@@ -1,31 +1,24 @@
 import { fetchArticles } from '../lib/data';
 import ArticleList from '../ui/articulos/ArticleList';
-import PaginationButton from '../ui/articulos/PaginationButton';
+import { NextButton, PrevButton } from '../ui/articulos/PaginationButtons';
 
 async function Page ({ searchParams }) {
     const {author, topic, page} = searchParams;
-    const {articles, totalPages, totalArticles} = await fetchArticles(page, author, topic);
-    const currentPage = Number(page) || 1;
-
-    function isNextButtonDisabled() {
-        return totalPages == 1 || (currentPage >= totalPages);
-    }
-
-    function isPrevButtonDisabled() {
-        return totalPages == 1 || (currentPage == 1);
-    }
+    const currentPage = Math.abs(Number(page)) || 1;
+    const {articles, totalPages, totalArticles} = await fetchArticles(currentPage, author, topic);
+    console.log(currentPage);
 
     return (
             <div className="flex flex-col md:w-3/4 space-y-6">
                 <h2 className="text-5xl font-extralight text-gray-900">
-                    {author || topic? "Resultado de búsqueda" : "Todos los artículos"}
+                    {articles.length > 0? (author || topic? "Resultado de búsqueda" : "Todos los artículos") : "Nada de nada de nada de nada de nada"}
                 </h2>
                 <ArticleList key={currentPage + author + topic} articles={articles} />
                 {
                     (totalArticles > articles.length) && (
                         <div className="flex justify-between md:w-4/6 mt-4">
-                            <PaginationButton type={'prev'} currentPage={currentPage} disabled={isPrevButtonDisabled()}/>
-                            <PaginationButton type={'next'} currentPage={currentPage} disabled={isNextButtonDisabled()} />
+                            <PrevButton totalPages={ totalPages } />
+                            <NextButton totalPages={ totalPages } />
                         </div>
                     )
                 }
