@@ -2,8 +2,7 @@
 
 import Image from 'next/image';
 import sources from '@/app/lib/sources';
-import Subtitle from './ui/Subtitle';
-import SeeAlso from './ui/SeeAlso';
+import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle} from './ui/RandomText';
 import MainArticle from '@/app/ui/MainArticle';
 import SmallerArticles from '@/app/ui/SmallerArticles';
 import OtherArticles from '@/app/ui/OtherArticles';
@@ -11,8 +10,9 @@ import { fetchArticles } from './lib/data';
 import Link from 'next/link';
 
 export default async function Home() {
-  const {articles, totalPages} = await fetchArticles();
-
+  
+  const { articles, _ } = await fetchArticles();
+  
   const mainArticle = articles.length > 0? articles[0] : null;
   const smallerArticles = articles.slice(1, 5);
   const otherArticles = articles.slice(5);

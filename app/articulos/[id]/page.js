@@ -1,11 +1,9 @@
-'use client';
-
 import Link from 'next/link';
 import { getMayLike } from '@/app/lib/texts';
 import Article from '@/app/ui/articulos/[id]/Article';
 import CommentSection from '@/app/ui/articulos/[id]/CommentSection';
 
-const Page = ({params}) => {
+export default function Page ({ params }) {
     
     const articleId = params.id;
 
@@ -13,7 +11,7 @@ const Page = ({params}) => {
             <>
             <div className="flex flex-col">
                 <Article articleId={articleId}/>
-                <CommentSection articleId={articleId}/>
+                <CommentSection />
             </div>
             <div className="flex flex-col justify-start w-fit">
                 <p className="font-extralight uppercase pt-4 pb-2 mx-2 text-gray-900 text-xl">También te puede interesar</p>
@@ -32,7 +30,3 @@ const Page = ({params}) => {
             </>
     );
 }
-
-
-
-export default Page;

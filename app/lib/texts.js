@@ -84,7 +84,7 @@ function getRandomArray(array, length) {
 
 function getRandomElement(array) {
     let index = Math.floor(Math.random() * array.length);
-    return [index, array[index]];
+    return array[index];
 }
 
 export function getSubtitle() {

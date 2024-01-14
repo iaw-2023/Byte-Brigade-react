@@ -3,9 +3,11 @@
 import CommentForm from './CommentForm';
 import { fetchComments } from "@/app/lib/data";
 import { useState, useEffect } from 'react';
+import { useParams } from 'next/navigation';
 
-export default function CommentSection({articleId}) {
+export default function CommentSection() {
 
+    const articleId = useParams().id;
     const [comments, setComments] = useState([]);
 
     useEffect(() => {

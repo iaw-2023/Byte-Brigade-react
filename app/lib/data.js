@@ -1,6 +1,6 @@
 import requests from "./requests";
-import axios from "axios";
 import { unstable_noStore as noStore } from "next/cache";
+import axios from "axios";
 
 export async function fetchArticles(page = 1, author = null, topic = null) {
     noStore();
@@ -12,24 +12,25 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
     if (topic) {
         url = `${url}&topic=${topic}`;
     }
-
     try {
-        const response = await axios.get(url);
-        const articles = response.data.data;
-        const totalPages = response.data.meta.last_page;
-        const totalArticles = response.data.meta.total;
-        return {articles, totalPages, totalArticles}
-    } catch (error) {
-        console.log(error);
+    const response = await axios.get(url);
+    return { 
+        articles: response.data.data, 
+        totalPages: response.data.meta.last_page,
+        totalArticles: response.data.meta.total
+     }
+    } catch(e) {
+        throw new Error("Failed to fetch articles.");
     }
 };
 
 export async function fetchTopics () {
     try {
-        const response = await axios.get(requests.topics);
-        return response.data.data;
+        const response = await fetch(requests.topics);
+        const responseJson = await response.json();
+        return responseJson.data;
     } catch (error) {
-        console.log(error);
+        throw new Error("Failed to retrieve topics.");
     }
 }
 
@@ -38,16 +39,14 @@ export async function fetchArticleById(articleID) {
         const response = await axios.get(requests.articles.fullArticle(articleID));
         return response.data.data;
     } catch (error) {
-        console.log(error);
+        throw new Error(`Failed to retrieve article ${articleId}.`);
     }
 }
 
 export async function fetchComments(articleId) {
     noStore();
     try {
-        console.log("Estamos recuperando");
         const response = await axios.get(requests.comments(articleId));
-        console.log("listo");
         return response.data.data;
     } catch (error) {
         return {error: `Se produjo un error al intentar obtener los comentarios para el artículo con ID ${articleId}.`};

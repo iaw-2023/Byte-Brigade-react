@@ -6,7 +6,6 @@ async function Page ({ searchParams }) {
     const {author, topic, page} = searchParams;
     const currentPage = Math.abs(Number(page)) || 1;
     const {articles, totalPages, totalArticles} = await fetchArticles(currentPage, author, topic);
-    console.log(currentPage);
 
     return (
             <div className="flex flex-col md:w-3/4 space-y-6">
