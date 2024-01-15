@@ -39,7 +39,7 @@ export async function fetchArticleById(articleID) {
         const response = await axios.get(requests.articles.fullArticle(articleID));
         return response.data.data;
     } catch (error) {
-        throw new Error(`Failed to retrieve article ${articleId}.`);
+        throw new Error(`Failed to retrieve article ${articleID}.`);
     }
 }
 
@@ -49,7 +49,7 @@ export async function fetchComments(articleId) {
         const response = await axios.get(requests.comments(articleId));
         return response.data.data;
     } catch (error) {
-        return {error: `Se produjo un error al intentar obtener los comentarios para el artículo con ID ${articleId}.`};
+        throw new Error(`Failed to retrieve comments for article ${articleId}.`)
     }
 }
 

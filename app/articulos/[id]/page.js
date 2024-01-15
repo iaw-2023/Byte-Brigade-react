@@ -11,7 +11,7 @@ export default function Page ({ params }) {
             <>
             <div className="flex flex-col">
                 <Article articleId={articleId}/>
-                <CommentSection />
+                <CommentSection articleId={ articleId } />
             </div>
             <div className="flex flex-col justify-start w-fit">
                 <p className="font-extralight uppercase pt-4 pb-2 mx-2 text-gray-900 text-xl">También te puede interesar</p>

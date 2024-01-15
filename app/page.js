@@ -1,18 +1,14 @@
-'use client';
-
 import Image from 'next/image';
 import sources from '@/app/lib/sources';
 import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle} from './ui/RandomText';
-import MainArticle from '@/app/ui/MainArticle';
-import SmallerArticles from '@/app/ui/SmallerArticles';
-import OtherArticles from '@/app/ui/OtherArticles';
+import { MainArticle, SmallerArticles } from './ui/ArticlePreviews';
 import { fetchArticles } from './lib/data';
 import Link from 'next/link';
+import ArticleList from './ui/common/ArticleList';
 
 export default async function Home() {
   
   const { articles, _ } = await fetchArticles();
-  
   const mainArticle = articles.length > 0? articles[0] : null;
   const smallerArticles = articles.slice(1, 5);
   const otherArticles = articles.slice(5);
@@ -32,7 +28,7 @@ export default async function Home() {
       <SmallerArticles articles={smallerArticles}/>
       <div className="mx-2 py-12 space-y-4">
         <SeeAlso />
-        <OtherArticles articles={otherArticles}/>
+        <ArticleList articles={otherArticles}/>
         <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="text-red-400 underline hover:text-red-600 font-semibold" href='/articulos'>VER MÁS</Link></p>
       </div>
     </div>

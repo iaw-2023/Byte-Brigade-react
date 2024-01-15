@@ -1,5 +1,5 @@
 import { fetchArticles } from '../lib/data';
-import ArticleList from '../ui/articulos/ArticleList';
+import ArticleList from '../ui/common/ArticleList';
 import { NextButton, PrevButton } from '../ui/articulos/PaginationButtons';
 
 async function Page ({ searchParams }) {

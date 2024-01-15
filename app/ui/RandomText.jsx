@@ -1,4 +1,4 @@
-'useClient'
+'use client';
 
 import { getSeeAlso, getSubtitle } from '../lib/texts';
 import { useState, useEffect } from 'react';

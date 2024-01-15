@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TopicTag from "../../TopicTag";
+import TopicTag from "../../common/TopicTag";
 import Teaser from "../../Teaser";
 import { fetchArticleById } from "@/app/lib/data";
 
@@ -8,7 +8,7 @@ export default async function Article({ articleId }) {
     const article = await fetchArticleById(articleId);
 
     return (
-        <article className="flex py-6 flex-col gap-3">
+        <article className="flex py-6 flex-col gap-3 min-h-fit h-26">
             <Link href={`/articulos?topic=${article.topic.id}`}>
                 <div className="text-2xl mx-4"><TopicTag topic={article.topic}/></div>
             </Link>
