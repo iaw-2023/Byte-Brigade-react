@@ -3,10 +3,12 @@
 import CommentForm from './CommentForm';
 import { fetchComments } from "@/app/lib/data";
 import { useState, useEffect } from 'react';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 export default function CommentSection( {articleId} ) {
 
     const [comments, setComments] = useState([]);
+    const { user, error, isLoading } = useUser();
 
     useEffect(() => {
         async function refreshComments() {
@@ -16,7 +18,7 @@ export default function CommentSection( {articleId} ) {
         refreshComments();
     }, []);
 
-    return (
+    return user && (
         <>
             <p className="font-extralight uppercase pt-4 pb-2 mt-4 mb-2 mx-2 text-gray-900 text-xl">{comments.length > 0? 'Toda esta gente no puede quedarse callada' : 'Decí algo porque si no es incomodísimo'}</p>
             <div className="text-gray-900 font-light justify-start gap-4 mx-4">

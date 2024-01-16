@@ -26,10 +26,10 @@ export default function CommentForm({ articleId , setComments }) {
     }
 
     return (
-        <form onSubmit={handleSubmit} className="my-2 mb-6 flex flex-col w-full max-w-4xl gap-2 justify-between">
+        <form onSubmit={handleSubmit} className="my-2 mb-6 space-y-2 flex flex-col w-full max-w-4xl justify-between">
             <label className="max-w-fit font-extralight px-1" htmlFor="email">Email</label>
             <input
-                className="rounded-md p-2 grow border border-red-200 hover:bg-red-500 focus:outline-none focus:border-red-300 focus:border-2"
+                className="rounded-md p-2 grow border border-red-200 focus:outline-none focus:border-red-300"
                 type="email"
                 id="email"
                 value={formData.email}
@@ -39,7 +39,7 @@ export default function CommentForm({ articleId , setComments }) {
                 required
             />
             <textarea
-                className="rounded-md grow border p-2 border-red-200 hover:bg-red-500  focus:outline-none focus:border-red-300 focus:border-2 resize-none"
+                className="rounded-md grow border border-red-200 focus:outline-none focus:border-red-300 resize-none"
                 name="text"
                 id="text"
                 value={formData.text}
