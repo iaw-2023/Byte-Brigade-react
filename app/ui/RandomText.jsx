@@ -10,7 +10,7 @@ function RandomText({ getText, className }) {
         setText(getText());
     }, []);
 
-    return <p className={className}>{`${text}`}</p>
+    return <p className={className}>{text && `${text}`}</p>
 }
 
 export function RandomSeeAlso() {
