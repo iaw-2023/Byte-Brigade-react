@@ -55,8 +55,8 @@ export async function fetchComments(articleId) {
 
 export async function postComment(articleId, formData) {
     try {
-
-    } catch {
-
+        await axios.post(requests.comments(articleId), formData);
+    } catch(e) {
+        throw new Error(`Failed to post comment for article ${articleId}.`);
     }
 }

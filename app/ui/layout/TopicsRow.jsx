@@ -5,6 +5,7 @@ import ShowMore from "./ShowMore";
 import { useState, useEffect } from "react";
 import { shuffleArray } from "@/app/lib/utils";
 import { fetchTopics } from "@/app/lib/data";
+import { dosis } from "../fonts";
 
 export default function TopicsRow() {
 
@@ -23,7 +24,7 @@ export default function TopicsRow() {
     const hiddenTopics = shuffledTopics.slice(5);
 
     return (
-        <div className="hidden grow xl:flex xl:justify-end font-thin text-center text-gray-200 gap-12">
+        <div className={`${dosis.className} hidden grow xl:flex xl:justify-end text-center text-gray-200 gap-12`}>
                 {
                     shownTopics.map(topic => {
                         return (
@@ -35,7 +36,7 @@ export default function TopicsRow() {
                                         query: { topic: topic.id }
                                     }
                                 }
-                                className="text-xl text-center hover:text-red-200">
+                                className="text-2xl text-center hover:text-red-200">
                                     {topic.name}
                             </Link>
                         );
@@ -43,7 +44,7 @@ export default function TopicsRow() {
                 }
                 {
                     hiddenTopics.length > 0 &&
-                    <div className="relative hidden text-xl xl:flex flex-col min-w-max w-32 mr-1 border-s-2 border-gray-300 border-opacity-100">
+                    <div className="relative hidden text-xl xl:flex flex-col min-w-max w-28 mr-1 border-s-2 border-gray-300 border-opacity-100">
                         <ShowMore hiddenTopics={ hiddenTopics }/>
                     </div>
                 }

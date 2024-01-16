@@ -5,15 +5,12 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 export default function AuthOptions() {
     const { user, error, isLoading } = useUser();
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
-
     let value = '';
 
     if (isLoading)
-        value = "Loading...";
+        value = <p>Loading...</p>;
     else if (error)
-        value = error.message;
+        value = <p>{error.message}</p>;
     else {
         value = user? (
                     <div className="flex flex-col items-end md:gap-2 md:items-center md:flex-row">
