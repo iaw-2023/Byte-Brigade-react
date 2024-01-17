@@ -8,7 +8,7 @@ export default function AuthOptions() {
     let value = '';
 
     if (isLoading)
-        value = <p>Loading...</p>;
+        value = <p>Cargando como te cargaban en la escuela...</p>;
     else if (error)
         value = <p>{error.message}</p>;
     else {
