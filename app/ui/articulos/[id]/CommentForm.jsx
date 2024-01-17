@@ -5,7 +5,7 @@ import { useState } from 'react';
 import clsx from "clsx";
 
 export default function CommentForm({ articleId , setComments, user }) {
-    const [comment, setComment] = useState('');
+    const [formComment, setFormComment] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
 
@@ -15,12 +15,13 @@ export default function CommentForm({ articleId , setComments, user }) {
         try {
             const formData = {
                 email: user.email,
-                text: comment 
+                text: formComment 
             };
             await postComment(articleId, formData);          
             setErrorMessage(null);
             const newComments = await fetchComments(articleId);
-            setComments(newComments)
+            setComments(newComments);
+            setFormComment('');
         } catch (error) {
             setErrorMessage("Se produjo un error al procesar la solicitud. Pegale al monitor e intentá nuevamente.");
         }
@@ -39,11 +40,11 @@ export default function CommentForm({ articleId , setComments, user }) {
                 )}
                 name="text"
                 id="text"
-                value={comment.text}
+                value={formComment}
                 cols="30"
                 rows="6"
                 disabled={isLoading}
-                onChange={ (e) => setComment(e.target.value) }
+                onChange={ (e) => setFormComment(e.target.value) }
                 required
             />
             <div className="flex justify-start align-middle gap-2">
