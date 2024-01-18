@@ -18,7 +18,7 @@ export default function CommentSection( {articleId} ) {
         refreshComments();
     }, []);
 
-    return user && (
+    return (
         <>
             <p className="font-extralight uppercase pt-4 pb-2 mt-4 mb-2 mx-2 text-gray-900 text-xl">{comments.length > 0? 'Toda esta gente no puede quedarse callada' : 'Decí algo porque si no es incomodísimo'}</p>
             <div className="flex flex-col gap-2 text-gray-900 font-light justify-start mx-4">
@@ -34,7 +34,7 @@ export default function CommentSection( {articleId} ) {
                         })
                     }
                 </div>
-                <CommentForm articleId={ articleId } user={user} setComments={setComments}/>
+                { user && <CommentForm articleId={ articleId } user={user} setComments={setComments}/> }
             </div>
         </>
     );

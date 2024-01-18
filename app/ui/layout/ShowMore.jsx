@@ -12,10 +12,10 @@ export default function showMore({ hiddenTopics }) {
 
     return (
         <>
-            <button className="text-right px-4" onClick={handleClick}>
+            <button className="text-right px-4 hover:text-red-300" onClick={handleClick}>
                 {isShown? 
-                    <p className="hover:text-red-300">Menos ▴</p> :
-                    <p className="hover:text-red-300">Más ▾</p>
+                    "Menos ▴":
+                    "Más ▾"
                 }
             </button>
             {

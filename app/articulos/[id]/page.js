@@ -13,7 +13,7 @@ export default async function Page ({ params }) {
                     <Article articleId={articleId}/>
                     <CommentSection articleId={ articleId } />
                 </div>
-                <div className="flex flex-col justify-start w-fit">
+                <div className="flex flex-col py-16 justify-start">
                     <p className="font-extralight uppercase pt-4 pb-2 mx-2 text-gray-900 text-xl">También te puede interesar</p>
                     <ul className="list-disc flex flex-col justify-between">
                         {getMayLike().map((liking, index) => {

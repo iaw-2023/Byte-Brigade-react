@@ -25,29 +25,29 @@ export default function TopicsRow() {
 
     return (
         <div className={`${dosis.className} hidden grow xl:flex xl:justify-end text-center text-gray-200 gap-12`}>
-                {
-                    shownTopics.map(topic => {
-                        return (
-                            <Link
-                                key={topic.id}
-                                href={
-                                    {
-                                        pathname: '/articulos',
-                                        query: { topic: topic.id }
-                                    }
+            {
+                shownTopics.map(topic => {
+                    return (
+                        <Link
+                            key={topic.id}
+                            href={
+                                {
+                                    pathname: '/articulos',
+                                    query: { topic: topic.id }
                                 }
-                                className="text-2xl text-center hover:text-red-200">
-                                    {topic.name}
-                            </Link>
-                        );
-                    })
-                }
-                {
-                    hiddenTopics.length > 0 &&
-                    <div className="relative hidden text-xl xl:flex flex-col min-w-max w-28 mr-1 border-s-2 border-gray-300 border-opacity-100">
-                        <ShowMore hiddenTopics={ hiddenTopics }/>
-                    </div>
-                }
-            </div>
+                            }
+                            className="text-2xl text-center hover:text-red-200">
+                                {topic.name}
+                        </Link>
+                    );
+                })
+            }
+            {
+                hiddenTopics.length > 0 &&
+                <div className="relative hidden text-xl xl:flex flex-col min-w-max w-28 mr-1 border-s-2 border-gray-300 border-opacity-100">
+                    <ShowMore hiddenTopics={ hiddenTopics }/>
+                </div>
+            }
+        </div>
     );
 }
