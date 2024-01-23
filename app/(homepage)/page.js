@@ -26,10 +26,10 @@ export default async function Home() {
       </div>
       <MainArticle article={mainArticle}/>
       <SmallerArticles articles={smallerArticles}/>
-      <div className="mx-2 py-12 space-y-4">
+      <div className="mx-2 py-12 space-y-4 xl:w-4/5">
         <SeeAlso />
         <ArticleList articles={otherArticles}/>
-        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="text-red-400 underline hover:text-red-600 font-semibold" href='/articulos'>VER MÁS</Link></p>
+        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="inline-block text-red-400 underline hover:text-red-600 font-semibold" href='/articulos'>VER MÁS</Link></p>
       </div>
     </div>
   );

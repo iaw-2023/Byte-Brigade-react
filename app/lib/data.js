@@ -3,7 +3,6 @@ import { unstable_noStore as noStore } from "next/cache";
 import axios from "axios";
 
 export async function fetchArticles(page = 1, author = null, topic = null) {
-    noStore();
     let url = `${requests.articles.index}?page=${page}`;
 
     if (author) {
@@ -26,9 +25,8 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
 
 export async function fetchTopics () {
     try {
-        const response = await fetch(requests.topics);
-        const responseJson = await response.json();
-        return responseJson.data;
+        const response = await axios.get(requests.topics);
+        return response.data.data;
     } catch (error) {
         throw new Error("Failed to retrieve topics.");
     }
