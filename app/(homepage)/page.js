@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import sources from '@/app/lib/sources';
-import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle} from './ui/RandomText';
-import { MainArticle, SmallerArticles } from './ui/ArticlePreviews';
-import { fetchArticles } from './lib/data';
+import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle} from '@/app/ui/RandomText';
+import { MainArticle, SmallerArticles } from '@/app/ui/ArticlePreviews';
+import { fetchArticles } from '@/app/lib/data';
 import Link from 'next/link';
-import ArticleList from './ui/common/ArticleList';
+import ArticleList from '@/app/ui/common/ArticleList';
 
 export default async function Home() {
   
