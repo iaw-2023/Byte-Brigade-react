@@ -1,6 +1,6 @@
 import { fetchArticles } from '../lib/data';
-import ArticleList from '../ui/common/ArticleList';
-import { NextButton, PrevButton } from '../ui/articulos/PaginationButtons';
+import ArticleList from '../ui/components/ArticleList';
+import { NextButton, PrevButton } from '../ui/components/articulos/PaginationButtons';
 
 async function Page ({ searchParams }) {
     const {author, topic, page} = searchParams;

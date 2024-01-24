@@ -1,9 +1,9 @@
 import './globals.css';
 import { inter } from './ui/fonts';
 import Link from 'next/link';
-import Navbar from '@/app/ui/layout/Navbar';
+import Navbar from '@/app/ui/components/layout/Navbar';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import LoginStatus from './ui/layout/LoginStatus';
+import LoginStatus from './ui/components/layout/LoginStatus';
 
 
 export const metadata = {
