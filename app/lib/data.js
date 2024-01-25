@@ -1,6 +1,9 @@
+'use server';
+
 import requests from "./requests";
 import { unstable_noStore as noStore } from "next/cache";
 import axios from "axios";
+import { getAccessToken } from "@auth0/nextjs-auth0";
 
 export async function fetchArticles(page = 1, author = null, topic = null) {
     let url = `${requests.articles.index}?page=${page}`;
@@ -53,8 +56,14 @@ export async function fetchComments(articleId) {
 
 export async function postComment(articleId, formData) {
     try {
-        await axios.post(requests.comments(articleId), formData);
+        const { accessToken } = await getAccessToken();
+        await axios.post(requests.comments(articleId), formData, {
+            headers: {
+                Authorization: `Bearer ${accessToken}`
+            }
+        });
     } catch(e) {
+        console.log(e);
         throw new Error(`Failed to post comment for article ${articleId}.`);
     }
 }
