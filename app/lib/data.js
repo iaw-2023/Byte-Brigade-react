@@ -6,6 +6,7 @@ import axios from "axios";
 import { getAccessToken } from "@auth0/nextjs-auth0";
 
 export async function fetchArticles(page = 1, author = null, topic = null) {
+    noStore();
     let url = `${requests.articles.index}?page=${page}`;
 
     if (author) {

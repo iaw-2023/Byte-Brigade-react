@@ -27,13 +27,13 @@ export default function Loading() {
 function MainArticleLoading() {
     return (
         <div className="bg-gray-50 flex flex-col px-4 py-14 xl:pb-20 w-full space-y-4 justify-between ">
-            <div className="bg-gray-100 rounded-md w-1/6 h-8"/>
-            <div className="bg-gray-100 rounded-xl w-2/3 h-8"/>
-            <div className="flex flex-col space-y-2">
-                <div className="bg-gray-100 rounded-xl w-11/12 h-10 xl:h-12"/>
-                <div className="bg-gray-100 rounded-xl w-4/5 h-10 xl:h-12"/>
-                <div className="bg-gray-100 rounded-xl w-2/3 h-10 xl:h-12 hidden xl:block"/>
-                <div className="bg-gray-100 rounded-xl w-5/6 h-10 xl:h-12"/>
+            <div className="animate-pulse bg-gray-200 rounded-md w-1/6 h-8"/>
+            <div className="animate-pulse bg-gray-200 rounded-xl w-2/3 h-8"/>
+            <div className="animate-pulse flex flex-col space-y-2">
+                <div className="bg-gray-200 rounded-xl w-11/12 h-10 xl:h-12"/>
+                <div className="bg-gray-200 rounded-xl w-4/5 h-10 xl:h-12"/>
+                <div className="bg-gray-200 rounded-xl w-2/3 h-10 xl:h-12 hidden xl:block"/>
+                <div className="bg-gray-200 rounded-xl w-5/6 h-10 xl:h-12"/>
             </div>
         </div>
     );
@@ -42,15 +42,15 @@ function MainArticleLoading() {
 function SmallArticleLoading() {
     return (
         <div className="flex flex-col space-y-6 w-full bg-gray-50 xl:h-80 px-4 py-4">
-            <div className="bg-gray-100 rounded-md w-16 h-4 xl:h-6"/>
-            <div className="flex flex-col space-y-2">
-                <div className="bg-gray-100 rounded-lg w-3/5 h-4 xl:h-6"/>
+            <div className="animate-pulse bg-gray-200 rounded-md w-16 h-4 xl:h-6"/>
+            <div className="animate-pulse flex flex-col space-y-2">
+                <div className="bg-gray-200 rounded-lg w-3/5 h-4 xl:h-6"/>
             </div>
-            <div className="flex flex-col space-y-2">
-                <div className="bg-gray-100 rounded-lg w-11/12 h-6 xl:h-8"/>
-                <div className="bg-gray-100 rounded-lg w-2/3 h-8 hidden xl:block"/>
-                <div className="bg-gray-100 rounded-lg w-4/5 h-8 hidden xl:block"/>
-                <div className="bg-gray-100 rounded-lg w-5/6 h-6 xl:h-8"/>
+            <div className="animate-pulse flex flex-col space-y-2">
+                <div className="bg-gray-200 rounded-lg w-11/12 h-6 xl:h-8"/>
+                <div className="bg-gray-200 rounded-lg w-2/3 h-8 hidden xl:block"/>
+                <div className="bg-gray-200 rounded-lg w-4/5 h-8 hidden xl:block"/>
+                <div className="bg-gray-200 rounded-lg w-5/6 h-6 xl:h-8"/>
             </div>
         </div>
     );
@@ -58,7 +58,7 @@ function SmallArticleLoading() {
 
 function OtherArticlesLoading() {
     return (
-        <div className="flex flex-col xl:w-4/5 space-y-2">
+        <div className="animate-pulse flex flex-col xl:w-4/5 space-y-2">
             <ArticleLoading />
             <ArticleLoading />
             <ArticleLoading />
@@ -70,9 +70,9 @@ function OtherArticlesLoading() {
 function ArticleLoading() {
     return (
         <div className="flex flex-col px-4 py-6 space-y-4 justify-between">
-            <div className="bg-gray-100 rounded-md w-1/6 h-6"/>
+            <div className="bg-gray-200 rounded-md w-1/6 h-6"/>
             <div className="flex flex-col space-y-2">
-                <div className="bg-gray-100 rounded-xl w-2/3 h-6"/>
+                <div className="bg-gray-200 rounded-xl w-2/3 h-6"/>
             </div>
         </div>
     );
