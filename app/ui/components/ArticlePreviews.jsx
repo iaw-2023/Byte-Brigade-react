@@ -8,7 +8,7 @@ export function MainArticle({ article }) {
 
   return (
     <Link
-      className="bg-gray-50 hover:bg-gray-100 flex flex-col justify-start p-4 py-14 hover:shadow-lg space-y-2 mx-2"
+      className="bg-gray-50 hover:bg-gray-100 flex flex-col h-96 min-h-fit p-4 py-14 hover:shadow-lg space-y-2 mx-2"
       href={`/articulos/${article.id}`}
     >
       <div className="text-xl">
