@@ -23,7 +23,9 @@ export default function CommentSection({ articleId }) {
         {comments
           ? comments.length > 0
             ? "Toda esta gente no puede quedarse callada"
-            : "Decí algo porque si no es incomodísimo"
+            : user
+              ? "Decí algo porque si no es incomodísimo"
+              : ""
           : "Cargando las pavadas que nos regala el libre derecho a la expresión"}
       </p>
       {comments && (
