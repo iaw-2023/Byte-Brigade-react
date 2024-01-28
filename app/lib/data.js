@@ -16,21 +16,21 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
         url = `${url}&topic=${topic}`;
     }
     try {
-    const response = await axios.get(url);
-    return { 
-        articles: response.data.data, 
-        totalPages: response.data.meta.last_page,
-        totalArticles: response.data.meta.total
-     }
-    } catch(e) {
+        const response = await axios.get(url);
+        return {
+            articles: response.data.data,
+            totalPages: response.data.meta.last_page,
+            totalArticles: response.data.meta.total
+        }
+    } catch (e) {
         throw new Error("Failed to fetch articles.");
     }
 };
 
-export async function fetchTopics () {
+export async function fetchTopics() {
     try {
         const response = await axios.get(requests.topics);
-        return response.data.data;
+        return response.data;
     } catch (error) {
         throw new Error("Failed to retrieve topics.");
     }
@@ -39,7 +39,7 @@ export async function fetchTopics () {
 export async function fetchArticleById(articleID) {
     try {
         const response = await axios.get(requests.articles.fullArticle(articleID));
-        return response.data.data;
+        return response.data;
     } catch (error) {
         throw new Error(`Failed to retrieve article ${articleID}.`);
     }
@@ -49,7 +49,7 @@ export async function fetchComments(articleId) {
     noStore();
     try {
         const response = await axios.get(requests.comments(articleId));
-        return response.data.data;
+        return response.data;
     } catch (error) {
         throw new Error(`Failed to retrieve comments for article ${articleId}.`)
     }
@@ -63,7 +63,7 @@ export async function postComment(articleId, formData) {
                 Authorization: `Bearer ${accessToken}`
             }
         });
-    } catch(e) {
+    } catch (e) {
         console.log(e);
         throw new Error(`Failed to post comment for article ${articleId}.`);
     }

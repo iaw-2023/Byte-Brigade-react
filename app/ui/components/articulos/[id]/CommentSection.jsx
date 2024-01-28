@@ -1,13 +1,17 @@
 "use client";
 
 import CommentForm from "./CommentForm";
-import { fetchComments } from "@/app/lib/data";
+import { fetchComments, likesArticle } from "@/app/lib/data";
 import { useState, useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function CommentSection({ articleId }) {
   const [comments, setComments] = useState(null);
   const { user, error, isLoading } = useUser();
+
+  if (user) {
+    console.log(likesArticle(articleId));
+  }
 
   useEffect(() => {
     async function refreshComments() {
