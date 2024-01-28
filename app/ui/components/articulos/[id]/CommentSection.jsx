@@ -1,17 +1,13 @@
 "use client";
 
 import CommentForm from "./CommentForm";
-import { fetchComments, likesArticle } from "@/app/lib/data";
+import { fetchComments } from "@/app/lib/data";
 import { useState, useEffect } from "react";
 import { useUser } from "@auth0/nextjs-auth0/client";
 
 export default function CommentSection({ articleId }) {
   const [comments, setComments] = useState(null);
   const { user, error, isLoading } = useUser();
-
-  if (user) {
-    console.log(likesArticle(articleId));
-  }
 
   useEffect(() => {
     async function refreshComments() {
@@ -21,17 +17,23 @@ export default function CommentSection({ articleId }) {
     refreshComments();
   }, []);
 
+  if (user) console.log(user);
+
+  function commentsText(text) {
+    return <p className="font-extralight uppercase pt-4 pb-2 mt-4 mb-2 mx-2 text-gray-900 text-xl">{text}</p>;
+  }
+
   return (
     <>
-      <p className="font-extralight uppercase pt-4 pb-2 mt-4 mb-2 mx-2 text-gray-900 text-xl">
-        {comments
-          ? comments.length > 0
-            ? "Toda esta gente no puede quedarse callada"
-            : user
-              ? "Decí algo porque si no es incomodísimo"
-              : ""
-          : "Cargando las pavadas que nos regala el libre derecho a la expresión"}
-      </p>
+      {comments
+        ? comments.length > 0
+          ? commentsText("Toda esta gente no puede quedarse callada")
+          : user
+            ? commentsText("Decí algo porque si no es incomodísimo")
+            : <p className="text-md mx-2 xl:mx-0 normal-case italic xl:w-1/2">
+              Tenés la chance irrepetible de ser el primero en dejar un comentario. <a href="/api/auth/login" className="text-red-300 inline-block font-semibold underline">Iniciá sesión</a> y dejá tu marca para la posteridad.
+            </p>
+        : "Cargando las pavadas que nos regala el libre derecho a la expresión"}
       {comments && (
         <div className="flex flex-col gap-2 text-gray-900 font-light justify-start mx-4">
           <div className="divide-y">
