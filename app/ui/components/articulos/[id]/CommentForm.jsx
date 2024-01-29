@@ -14,7 +14,7 @@ export default function CommentForm({ articleId, setComments, user }) {
     setIsLoading(true);
     try {
       const formData = {
-        name: user.name,
+        name: user.nickname,
         text: formComment,
       };
       await postComment(articleId, formData);

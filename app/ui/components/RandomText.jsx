@@ -25,7 +25,7 @@ export function RandomSeeAlso() {
 export function RandomSubtitle() {
   return (
     <RandomText
-      className="text-gray-950 text-base sm:text-lg md:text-2xl lg:text-4xl text-center font-serif font-semibold"
+      className="text-gray-950 text-center sm:text-lg md:text-2xl lg:text-4xl font-serif font-semibold"
       getText={getSubtitle}
     />
   );

@@ -1,11 +1,12 @@
 const SUBTITLES = [
-    "¿Qué vas a hacer?¿Leer La Brújula?",
-    "Un saludo a todos los giles con carrito de compras",
-    "ayuda me tienen encerrado escribiendo pavadas",
-    `Felicitaciones, <<USER>>, sos el visitante NaN!!`,
-    "No es que la realidad sea muy distinta, realmente",
-    "Desde el 1 a 1 que no la pasabas tan bien",
-    'Llamando a la ignorancia "minimalismo" de la cuna a la tumba'
+    '¿Qué vas a hacer?¿Leer La Brújula?',
+    'Un saludo a todos los giles con carrito de compras',
+    'ayuda me tienen encerrado escribiendo pavadas',
+    'Felicitaciones, <<USER>>, sos el visitante NaN!!',
+    'No es que la realidad sea muy distinta, realmente',
+    'Desde el 1 a 1 que no la pasabas tan bien',
+    'Llamando a la ignorancia "minimalismo" de la cuna a la tumba',
+    'Quizás el botón de like son los amigos que hicimos en el camino'
 ];
 
 const SEE_ALSOS = [
@@ -19,9 +20,11 @@ const SEE_ALSOS = [
     'La página es pobre, pero un par de giladas más hay'
 ];
 
-function MayLike(text, href) {
-    this.text = text;
-    this.href = href;
+class MayLike {
+    constructor(text, href) {
+        this.text = text;
+        this.href = href;
+    }
 }
 
 const MAY_LIKE = [
@@ -108,6 +111,6 @@ export function getNotFound() {
     if (chance > 95)
         return MANIFESTO;
     else
-     return getRandomElement(NOT_FOUND);
+        return getRandomElement(NOT_FOUND);
 }
 

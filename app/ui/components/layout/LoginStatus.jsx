@@ -14,7 +14,7 @@ export default function AuthOptions() {
     else {
         toRender = user ? (
             <div className="flex flex-col items-end md:gap-2 md:items-center md:flex-row">
-                <p>Bienvenido, {user.name}</p>
+                <p>Bienvenido, {user.nickname}</p>
                 <p className="hidden md:flex">|</p>
                 <a href="/api/auth/logout" className="font-semibold text-red-300 underline">
                     Logout
@@ -28,7 +28,7 @@ export default function AuthOptions() {
     }
 
     return (
-        <div className="flex justify-end text-lg md:text-xl xl:text-2xl mr-4 md:mr-10">
+        <div className="flex font-light justify-end text-lg md:text-xl xl:text-2xl mr-4 md:mr-10">
             {toRender}
         </div>
     );
