@@ -4,13 +4,13 @@ import { getSeeAlso, getSubtitle } from "../../lib/texts";
 import { useState, useEffect } from "react";
 
 function RandomText({ getText, className }) {
-  const [text, setText] = useState(null);
+  const [text, setText] = useState('');
 
   useEffect(() => {
     setText(getText());
   }, []);
 
-  return <p className={className}>{text && `${text}`}</p>;
+  return <p className={className}>{text}</p>;
 }
 
 export function RandomSeeAlso() {
