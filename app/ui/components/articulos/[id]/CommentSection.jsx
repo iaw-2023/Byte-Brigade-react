@@ -17,8 +17,6 @@ export default function CommentSection({ articleId }) {
     refreshComments();
   }, []);
 
-  if (user) console.log(user);
-
   return (
     <>
       {
