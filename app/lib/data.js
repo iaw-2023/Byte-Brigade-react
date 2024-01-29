@@ -22,7 +22,7 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
             totalPages: response.data.meta.last_page,
             totalArticles: response.data.meta.total
         }
-    } catch (e) {
+    } catch (error) {
         throw new Error("Failed to fetch articles.");
     }
 };
@@ -63,8 +63,7 @@ export async function postComment(articleId, formData) {
                 Authorization: `Bearer ${accessToken}`
             }
         });
-    } catch (e) {
-        console.log(e);
+    } catch (error) {
         throw new Error(`Failed to post comment for article ${articleId}.`);
     }
 }
