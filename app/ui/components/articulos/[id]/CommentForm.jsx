@@ -54,7 +54,7 @@ export default function CommentForm({ articleId, setComments, user }) {
       />
       <div className="flex justify-start align-middle gap-2">
         <button
-          className="bg-red-400 hover:bg-red-500 active:bg-red-600 text-white font-medium max-w-fit py-2 px-6 border border-gray-300 rounded-lg"
+          className="bg-red-400 inline-block hover:bg-red-500 active:bg-red-600 text-white font-medium max-w-fit py-2 px-6 border border-gray-300 rounded-lg"
           type="submit"
           disabled={isLoading}
         >
