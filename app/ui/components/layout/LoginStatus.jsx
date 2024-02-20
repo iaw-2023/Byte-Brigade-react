@@ -11,7 +11,7 @@ export default function AuthOptions() {
     if (isLoading)
         toRender = (
             <div className="flex justify-end">
-                <div className="hidden md:flex flex-row items-baseline">
+                <div className="hidden md:flex items-baseline">
                     <Spinner dimension={5} />
                     <p className="py-1 ml-2">Cargando como te cargaban en la escuela</p>
                 </div>
