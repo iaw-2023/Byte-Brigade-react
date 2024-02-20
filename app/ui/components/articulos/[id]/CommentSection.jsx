@@ -81,9 +81,9 @@ function CommentsList({ comments }) {
 
 function LoginPrompt({ length }) {
   const firstSentence = length > 0 ? " No dejes que el marmota de arriba crea que tiene razón." : "Tenés la chance irrepetible de ser el primero en comentar.";
-  let secondSentence = length > 0 ? " y mostrale lo que es bueno." : " y dejá tu marca para la posteridad.";
+  const secondSentence = length > 0 ? " y mostrale lo que es bueno." : " y dejá tu marca para la posteridad.";
   return (
-    <p className="rounded-lg p-2 bg-slate-50 text-md lg:text-lg mt-4 x-2 xl:mx-0 normal-case xl:w-1/2">
+    <p className="rounded-lg mx-2 px-4 py-2 bg-slate-50 text-md lg:text-lg mt-4 x-2 xl:mx-0 normal-case xl:w-1/2">
       {firstSentence}{" "}<a href="/api/auth/login" className="text-red-300 hover:text-red-500 inline-block font-semibold">Iniciá sesión</a>{secondSentence}
     </p>
   );
