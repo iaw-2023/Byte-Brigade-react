@@ -10,10 +10,20 @@ export default function AuthOptions() {
 
     if (isLoading)
         toRender = (
-            <>
-                <Spinner dimension={5} />
-                <p className="py-1 ml-2">Cargando como te cargaban en la escuela...</p>
-            </>
+            <div className="flex justify-end">
+                <div className="hidden md:flex flex-row items-baseline">
+                    <Spinner dimension={5} />
+                    <p className="py-1 ml-2">Cargando como te cargaban en la escuela</p>
+                </div>
+                <div className="flex space-x-2 items-center md:hidden">
+                    <Spinner dimension={8} />
+                    <div className="flex flex-col items-start">
+                        <p>Cargando como te cargaban</p>
+                        <p>en la escuela</p>
+                    </div>
+                </div>
+
+            </div>
         );
     else if (error)
         toRender = <p>{error.message}</p>;
@@ -23,18 +33,18 @@ export default function AuthOptions() {
                 <p>Bienvenido, {user.nickname}</p>
                 <p className="hidden md:flex">|</p>
                 <a href="/api/auth/logout" className="font-semibold text-red-300 hover:text-red-500">
-                    Logout
+                    Cerrar sesión
                 </a>
             </div>
         ) : (
             <a href="/api/auth/login" className="font-semibold text-red-300 hover:text-red-500">
-                Login
+                Iniciar sesión
             </a>
         );
     }
 
     return (
-        <div className="flex font-light items-baseline justify-end text-xl md:text-xl xl:text-2xl mr-4 md:mr-10">
+        <div className="flex font-light items-baseline justify-end text-xl md:text-2xl mr-4 md:mr-10">
             {toRender}
         </div>
     );

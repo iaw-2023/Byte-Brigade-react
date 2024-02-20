@@ -43,20 +43,25 @@ export default function CommentSection({ articleId }) {
             </>
           )
           : (
-            <div className="flex items-baseline h-5">
-              <Spinner dimension="4" />
-              <CommentsHeader text="Cargando las joyitas que nos regala el libre derecho a la expresión" />
-            </div>
+            <>
+              <div className="hidden md:flex items-baseline space-x-2">
+                <Spinner dimension="4" />
+                <CommentsHeader text="Cargando las joyitas que nos regala el libre derecho a la expresión" />
+              </div>
+              <div className="flex md:hidden items-center space-x-2">
+                <Spinner dimension="10" />
+                <CommentsHeader text={`Cargando las joyitas que nos regala el libre derecho a la expresión`} />
+              </div>
+            </>
           )
       }
-
     </>
   );
 }
 
 function CommentsHeader({ text, extraClass }) {
   const extra = extraClass ? extraClass : '';
-  return <p className={`font-extralight uppercase py-1 mt-4 mb-2 mx-2 text-gray-900 text-xl ${extra}`}>{text}</p>;
+  return <p className={`font-extralight text-lg md:text-xl uppercase py-1 mt-4 mb-2 text-gray-900 ${extra}`}>{text}</p>;
 }
 
 function CommentsList({ comments }) {

@@ -15,12 +15,12 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col space-y-6">
-      <div className="flex justify-center items-center gap-4 p-4">
+      <div className="flex justify-center items-center gap-4">
         <div className="w-72 h-72" style={{ position: "relative" }}>
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo" />
         </div>
         <div className="flex flex-col w-3/5 items-center space-y-2">
-          <h1 className="text-gray-950 flex-wrap text-7xl md:text-8xl xl:text-9xl text-center font-serif font-semibold">El Corchazo</h1>
+          <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
           <Subtitle />
         </div>
       </div>
@@ -29,7 +29,7 @@ export default async function Home() {
       <div className="mx-2 py-12 space-y-4 xl:w-4/5">
         <SeeAlso />
         <ArticleList articles={otherArticles} />
-        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="inline-block text-red-400 underline hover:text-red-600 font-semibold" href='/articulos'>VER MÁS</Link></p>
+        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="inline-block text-red-300 hover:text-red-500 font-semibold" href='/articulos'>VER MÁS</Link></p>
       </div>
     </div>
   );
