@@ -23,6 +23,7 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
             totalArticles: response.data.meta.total
         }
     } catch (error) {
+        console.log(error.message);
         throw new Error("Failed to fetch articles.");
     }
 };
