@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 import Link from "next/link";
 
-const pathCountThreshold = 7;
+const pathCountThreshold = 5;
 
 export default function SpecialMessageAlert() {
     const [visitedPathsCount, setVisitedPathsCount] = useState(0);
@@ -38,7 +38,7 @@ export default function SpecialMessageAlert() {
             <Link className="text-gray-800 text-center grow" href="/idoneidad">
                 <span className="uppercase text-gray-100 mr-1 font-bold lg:w-3/4">Importante</span> Un mensaje del editor en jefe de <span className="font-serif font-semibold inline-block">El Corchazo</span>.
             </Link>
-            <button 
+            <button
                 className="grow-0 mr-2"
                 onClick={() => setShowMessage(false)}
             >
