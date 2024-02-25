@@ -65,6 +65,13 @@ const NOT_FOUND = [
     'Por ahora, nada. Andá a ver si llueve y probá de nuevo.'
 ];
 
+const ERROR = [
+    'Algo tocaste.',
+    'SACÁ LA MANO.',
+    'Esperá cinco que le damos de comer a los monos.',
+    'Imaginate un gráfico gracioso.'
+]
+
 const MANIFESTO = `No. No se pudo. Es verdaderamente una lástima, porque podría haber sido diferente. Ahora podrías estar leyendo unos artículos divertidísimos, pero no va a ser ahora. No va a ser dentro de un rato, y posiblemente no sea esta semana, ni este mes, y -siendo honesto- tampoco para fin de año.
 Quizás quien debía escribir el artículo tuvo un problema. Quizás no quiso. Quizás faltó tiempo. Quizás, por qué no, el tiempo no alcanzó. O, tal vez, alcanzó, pero no se aprovechó.
 No desesperemos. No lloremos por el artículo que no está, y sonriamos pensando en el que podría haber sido.`
@@ -114,5 +121,9 @@ export function getNotFound() {
         return MANIFESTO;
     else
         return getRandomElement(NOT_FOUND);
+}
+
+export function getError() {
+    return getRandomElement(ERROR);
 }
 
