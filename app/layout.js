@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Navbar from '@/app/ui/components/layout/Navbar';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import LoginStatus from './ui/components/layout/LoginStatus';
+import SpecialMessage from './ui/components/layout/SpecialMessage';
 
 
 export const metadata = {
@@ -11,12 +12,15 @@ export const metadata = {
   description: 'Esto no es un pedido de ayuda.',
 }
 
+const showSpecialMessage = true;
+
 export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <UserProvider>
         <body className={`${inter.className} antialiased`}>
           <header className="mb-8">
+            <SpecialMessage />
             <Navbar />
             <LoginStatus />
           </header>
