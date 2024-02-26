@@ -123,7 +123,3 @@ export function getNotFound() {
         return getRandomElement(NOT_FOUND);
 }
 
-export function getError() {
-    return getRandomElement(ERROR);
-}
-

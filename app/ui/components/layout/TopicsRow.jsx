@@ -34,14 +34,14 @@ export default function TopicsRow() {
               pathname: "/articulos",
               query: { topic: topic.id },
             }}
-            className="text-xl text-center hover:text-red-200"
+            className="text-lg text-center hover:text-red-200"
           >
             {topic.name}
           </Link>
         );
       })}
       {hiddenTopics.length > 0 && (
-        <div className="relative hidden text-xl xl:flex flex-col w-36 border-s-2 border-gray-300 border-opacity-100">
+        <div className="relative hidden text-lg xl:flex flex-col w-36 border-s-2 border-gray-300 border-opacity-100">
           <ShowMore hiddenTopics={hiddenTopics} />
         </div>
       )}

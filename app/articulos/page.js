@@ -9,7 +9,7 @@ async function Page({ searchParams }) {
 
     return (
         <div className="flex flex-col xl:w-3/4 space-y-6">
-            <h2 className="text-5xl font-extralight text-gray-900">
+            <h2 className="text-3xl md:text-4xl font-extralight text-gray-900">
                 {articles.length > 0 ? (author || topic ? "Resultado de búsqueda" : "Todos los artículos") : "Nada de nada de nada de nada de nada"}
             </h2>
             <ArticleList key={currentPage + author + topic} articles={articles} />

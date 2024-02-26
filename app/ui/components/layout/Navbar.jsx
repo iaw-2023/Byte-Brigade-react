@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <nav
       id="nav"
-      className="items-end bg-gray-950 flex pt-6 pb-5 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400"
+      className="items-end bg-gray-950 flex py-4 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400"
     >
       <Link href="/">
         <h1 className="ml-4 text-gray-200 min-w-max hover:text-red-200 font-serif text-4xl">

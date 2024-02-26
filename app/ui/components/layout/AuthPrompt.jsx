@@ -3,7 +3,7 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
 import Spinner from '../Spinner';
 
-export default function AuthOptions() {
+export default function AuthPrompt() {
     const { user, error, isLoading } = useUser();
 
     let toRender = '';
@@ -43,7 +43,7 @@ export default function AuthOptions() {
     }
 
     return (
-        <div className="flex font-light justify-end text-xl md:text-2xl mr-4 md:mr-10">
+        <div className="flex font-light justify-end text-lg mr-4 md:mr-10">
             {toRender}
         </div>
     );
