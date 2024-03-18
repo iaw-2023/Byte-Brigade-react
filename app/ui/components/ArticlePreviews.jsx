@@ -8,7 +8,7 @@ export function MainArticle({ article }) {
 
   return (
     <Link
-      className="bg-gray-50 hover:bg-gray-100 flex flex-col h-96 min-h-fit p-4 py-14 hover:shadow-lg space-y-2 mx-2"
+      className="bg-gray-50 hover:bg-gray-100 flex flex-col justify-center min-h-96 min-h-fit p-4 py-14 hover:shadow-lg space-y-2 mx-2"
       href={`/articulos/${article.id}`}
     >
       <div className="text-xl">
@@ -26,7 +26,7 @@ export function MainArticle({ article }) {
 
 export function SmallerArticles({ articles }) {
   return (
-    <div className="flex flex-col xl:flex-row xl:flex-wrap justify-between gap-4 mx-2">
+    <div className="flex flex-col xl:flex-row justify-between space-y-4 xl:space-y-0">
       {articles.map((article) => {
         return (
           <Link key={article.id} href={`/articulos/${article.id}`}>

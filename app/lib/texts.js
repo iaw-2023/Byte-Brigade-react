@@ -115,6 +115,10 @@ export function getMayLike() {
     return getRandomArray(MAY_LIKE, 4);
 }
 
+export function getError() {
+    return getRandomElement(ERROR);
+}
+
 export function getNotFound() {
     const chance = Math.random() * 100;
     if (chance > 95)
