@@ -7,7 +7,7 @@ export default async function Article({ articleId }) {
   const article = await fetchArticleById(articleId);
 
   return (
-    <article className="flex py-6 flex-col gap-3 min-h-fit h-26">
+    <article className="flex flex-col space-y-3 min-h-fit h-26">
       <Link href={`/articulos?topic=${article.topic.id}`}>
         <div className="text-2xl mx-4">
           <TopicTag topic={article.topic} />
