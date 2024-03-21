@@ -31,19 +31,19 @@ export default function AuthPrompt() {
             <div className="flex flex-col md:flex-row items-end md:gap-2 md:items-center">
                 <p>Bienvenido, {user.nickname}</p>
                 <p className="hidden md:flex">|</p>
-                <a href="/api/auth/logout" className="font-semibold text-red-300 hover:text-red-500">
+                <a href="/api/auth/logout" className="text-red-300 hover:text-gray-950">
                     Cerrar sesión
                 </a>
             </div>
         ) : (
-            <a href="/api/auth/login" className="font-semibold text-red-300 hover:text-red-500">
+            <a href="/api/auth/login" className="text-red-300 hover:text-gray-950">
                 Iniciar sesión
             </a>
         );
     }
 
     return (
-        <div className="flex font-light justify-end text-lg mr-4 md:mr-10">
+        <div className="flex font-light justify-end text-lg xl:text-2xl mr-4 md:mr-10">
             {toRender}
         </div>
     );

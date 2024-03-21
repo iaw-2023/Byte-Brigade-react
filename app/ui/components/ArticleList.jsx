@@ -3,7 +3,7 @@ import TopicTag from "./TopicTag";
 
 export default function ArticleList({ articles }) {
     return (
-        <div className="flex flex-col divide-y justify-center">
+        <div className="flex flex-col divide-y">
             {
                 articles && (
                     articles.map((article, index) => <ArticleListItem key={article.id} article={article} index={index} />)
