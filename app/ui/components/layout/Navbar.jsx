@@ -6,15 +6,15 @@ export default function Navbar() {
   return (
     <nav
       id="nav"
-      className="items-end font-light bg-gray-950 flex py-4 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400"
+      className="flex items-end font-light bg-gray-950 pt-6 p-4 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400"
     >
       <Link href="/">
-        <h1 className="ml-4 text-gray-200 min-w-max font-serif text-4xl">
+        <h1 className="text-gray-200 min-w-max font-serif text-4xl xl:text-5xl">
           El Corchazo
         </h1>
       </Link>
       <div
-        className={`${merriweather.className} font-light flex uppercase w-full justify-end visible xl:hidden text-gray-200 text-lg xs:text-xl hover:text-red-200 pr-2 py-1`}
+        className="font-light flex uppercase w-full justify-end items-end visible xl:hidden text-gray-200 text-lg xs:text-xl hover:text-red-200"
       >
         <Link href="/categorias">Categorías</Link>
       </div>

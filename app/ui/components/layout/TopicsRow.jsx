@@ -23,25 +23,29 @@ export default function TopicsRow() {
   const hiddenTopics = shuffledTopics.slice(5);
 
   return (
-    <div
-      className={`${merriweather.className} hidden grow items-center xl:flex xl:justify-end text-gray-200 gap-12`}
-    >
-      {shownTopics.map((topic) => {
-        return (
-          <Link
-            key={topic.id}
-            href={{
-              pathname: "/articulos",
-              query: { topic: topic.id },
-            }}
-            className="text-lg text-center hover:text-red-200"
-          >
-            {topic.name}
-          </Link>
-        );
-      })}
+    <div className="hidden xl:flex text-xl justify-end text-gray-200 w-full items-end">
+      <div
+        className="flex justify-end gap-10 font-extralight"
+      >
+        {
+          shownTopics.map((topic) => {
+            return (
+              <Link
+                key={topic.id}
+                href={{
+                  pathname: "/articulos",
+                  query: { topic: topic.id },
+                }}
+                className="text-center hover:text-red-200"
+              >
+                {topic.name}
+              </Link>
+            );
+          })
+        }
+      </div>
       {hiddenTopics.length > 0 && (
-        <div className="relative hidden text-lg xl:flex flex-col w-36 border-s-2 border-gray-300 border-opacity-100">
+        <div className="relative hidden xl:flex flex-col w-44 border-l border-gray-300 ml-5">
           <ShowMore hiddenTopics={hiddenTopics} />
         </div>
       )}
