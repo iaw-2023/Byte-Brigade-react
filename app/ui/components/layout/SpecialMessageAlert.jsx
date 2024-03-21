@@ -2,28 +2,43 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { fetchLatestEditorial } from '@/app/lib/data';
 import Link from "next/link";
 
 const pathCountThreshold = 5;
 
 export default function SpecialMessageAlert() {
+    const [editorial, setEditorial] = useState({});
     const [visitedPathsCount, setVisitedPathsCount] = useState(0);
-    const [showMessage, setShowMessage] = useState(true);
+    const [showMessage, setShowMessage] = useState(false);
     const pathname = usePathname();
 
     useEffect(() => {
-        if (pathname !== '/idoneidad') {
-            if (!showMessage) {
-                if (visitedPathsCount === pathCountThreshold) {
-                    setVisitedPathsCount(0);
-                    setShowMessage(true);
-                } else {
-                    setVisitedPathsCount(vpc => (vpc + 1));
-                }
+        async function fetchAndSetEditorial() {
+            const latestEditorial = await fetchLatestEditorial();
+            if (latestEditorial) {
+                setEditorial(latestEditorial);
+                setShowMessage(true);
             }
-        } else {
-            setVisitedPathsCount(0);
-            setShowMessage(false);
+        }
+        fetchAndSetEditorial();
+    }, []);
+
+    useEffect(() => {
+        if (editorial) {
+            if (pathname !== '/idoneidad') {
+                if (!showMessage) {
+                    if (visitedPathsCount === pathCountThreshold) {
+                        setVisitedPathsCount(0);
+                        setShowMessage(true);
+                    } else {
+                        setVisitedPathsCount(vpc => (vpc + 1));
+                    }
+                }
+            } else {
+                setVisitedPathsCount(0);
+                setShowMessage(false);
+            }
         }
     }, [pathname]);
 

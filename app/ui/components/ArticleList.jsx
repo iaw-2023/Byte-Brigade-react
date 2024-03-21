@@ -15,7 +15,7 @@ export default function ArticleList({ articles }) {
 
 function ArticleListItem({ article, index }) {
     return (
-        <Link className="flex flex-col space-y-2 hover:bg-gray-50 py-4" href={`/articulos/${article.id}`}>
+        <Link className="flex flex-col space-y-2 hover:bg-gray-50 py-4 px-2" href={`/articulos/${article.id}`}>
             <div className="text-sm"><TopicTag topic={article.topic} /></div>
             <p className="text-lg md:text-xl text-gray-900">{article.title}</p>
         </Link>

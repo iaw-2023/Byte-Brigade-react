@@ -27,6 +27,15 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
     }
 };
 
+export async function fetchLatestEditorial() {
+    try {
+        const response = await axios.get(requests.editorials.latest);
+        return response.data;
+    } catch (error) {
+        throw new Error("Failed to retrieve the latest editorial.");
+    }
+}
+
 export async function fetchTopics() {
     try {
         const response = await axios.get(requests.topics);

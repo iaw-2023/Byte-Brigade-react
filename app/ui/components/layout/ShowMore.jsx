@@ -13,7 +13,7 @@ export default function showMore({ hiddenTopics }) {
   return (
     <>
       <button
-        className="text-right font-light text-2xl px-4 hover:text-red-300 mr-4 uppercase"
+        className="text-right font-light text-2xl px-4 text-red-100 hover:text-inherit mr-4 uppercase"
         onClick={handleClick}
       >
         {isShown ? "Menos ▴" : "Más ▾"}
@@ -25,7 +25,7 @@ export default function showMore({ hiddenTopics }) {
 
 function DropdownMenu({ topics }) {
   return (
-    <div className="absolute right-0 origin-top top-full bg-gray-950 rounded-md border border-gray-300 border-opacity-10 mt-2 p-2 min-w-max w-52">
+    <div className="absolute right-8 origin-top top-full font-extralight bg-gray-950 rounded-sm border border-gray-200 mt-2 p-2 min-w-max w-52">
       <ul className="text-gray-100 space-y-2 divide-y divide-opacity-5 divide-red-200">
         {topics.map((topic) => {
           return (

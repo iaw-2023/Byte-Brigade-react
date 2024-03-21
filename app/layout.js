@@ -12,8 +12,6 @@ export const metadata = {
   description: 'Esto no es un pedido de ayuda.',
 }
 
-const showSpecialMessage = true;
-
 export default function RootLayout({ children }) {
   return (
     <html lang="es">

@@ -5,7 +5,6 @@ import ShowMore from "./ShowMore";
 import { useState, useEffect } from "react";
 import { shuffleArray } from "@/app/lib/utils";
 import { fetchTopics } from "@/app/lib/data";
-import { merriweather } from "../../fonts";
 
 export default function TopicsRow() {
   const [topics, setTopics] = useState([]);
@@ -45,7 +44,7 @@ export default function TopicsRow() {
         }
       </div>
       {hiddenTopics.length > 0 && (
-        <div className="relative hidden xl:flex flex-col w-44 border-l border-gray-300 ml-5">
+        <div className="relative hidden xl:flex flex-col w-44 border-l border-gray-300 ml-10">
           <ShowMore hiddenTopics={hiddenTopics} />
         </div>
       )}
