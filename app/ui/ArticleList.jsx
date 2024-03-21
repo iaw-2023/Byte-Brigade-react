@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TopicTag from "./TopicTag";
+import { ClassicTag as TopicTag } from "./TopicTags";
 
 export default function ArticleList({ articles }) {
     return (

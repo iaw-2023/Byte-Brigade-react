@@ -1,6 +1,6 @@
 'use client';
 
-import { CardBrick } from "@/app/ui/components/CardBrick";
+import { CardBrick } from "@/app/ui/CardBrick";
 
 export default function Page() {
     return <div className="w-1/2 border-black border-2 rounded-lg">

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getMayLike } from '@/app/lib/texts';
-import Article from '@/app/ui/components/articulos/[id]/Article';
-import CommentSection from '@/app/ui/components/articulos/[id]/CommentSection';
+import Article from '@/app/ui/articulos/[id]/Article';
+import CommentSection from '@/app/ui/articulos/[id]/CommentSection';
 
 export default async function Page({ params }) {
 

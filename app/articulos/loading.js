@@ -1,4 +1,4 @@
-import { RandomLoading } from "../ui/components/RandomText"
+import { RandomLoading } from "../ui/RandomText"
 
 export default function Loading() {
     return (

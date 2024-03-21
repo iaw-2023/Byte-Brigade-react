@@ -1,6 +1,5 @@
 import Link from "next/link";
 import TopicsRow from "./TopicsRow";
-import { merriweather } from "../../fonts";
 
 export default function Navbar() {
   return (

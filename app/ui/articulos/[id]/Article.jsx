@@ -1,5 +1,5 @@
 import Link from "next/link";
-import TopicTag from "../../TopicTag";
+import { ClassicTag as TopicTag } from "../../TopicTags";
 import Teaser from "../../Teaser";
 import { fetchArticleById } from "@/app/lib/data";
 
@@ -26,7 +26,7 @@ export default async function Article({ articleId }) {
         </Link>
       </p>
       <div
-        className="mx-6 pr-8 font-serif space-y-4 text-lg"
+        className="pl-6 pr-14 font-serif space-y-4 text-lg"
         dangerouslySetInnerHTML={{ __html: article.body }}
       />
     </article>

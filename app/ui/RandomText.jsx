@@ -1,6 +1,6 @@
 "use client";
 
-import { getSeeAlso, getSubtitle, getSearching } from "../../lib/texts";
+import { getSeeAlso, getSubtitle, getSearching } from "../lib/texts";
 import { useState, useEffect } from "react";
 
 function RandomText({ getText, className }) {

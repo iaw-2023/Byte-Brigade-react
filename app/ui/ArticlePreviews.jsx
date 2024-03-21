@@ -1,7 +1,7 @@
-import TopicTag from "./TopicTag";
+import { ClassicTag as TopicTag } from "./TopicTags";
 import Teaser from "./Teaser";
 import Link from "next/link";
-import getColor from "../../lib/color";
+import getColor from "../lib/color";
 
 export function MainArticle({ article }) {
   const bgColor = getColor(article.topic.id);

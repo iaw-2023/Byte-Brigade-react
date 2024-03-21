@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import sources from '@/app/lib/sources';
-import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle } from '@/app/ui/components/RandomText';
-import { MainArticle, SmallerArticles } from '@/app/ui/components/ArticlePreviews';
+import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle } from '@/app/ui/RandomText';
+import { MainArticle, SmallerArticles } from '@/app/ui/ArticlePreviews';
 import { fetchArticles } from '@/app/lib/data';
+import ElCorchazo from '../ui/ElCorchazoSpan';
 import Link from 'next/link';
-import ArticleList from '@/app/ui/components/ArticleList';
+import ArticleList from '@/app/ui/ArticleList';
 
 export default async function Home() {
 
@@ -20,7 +21,7 @@ export default async function Home() {
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo" />
         </div>
         <div className="flex flex-col w-3/5 items-center space-y-2">
-          <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-serif font-semibold">El Corchazo</h1>
+          <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center"><ElCorchazo /></h1>
           <Subtitle />
         </div>
       </div>

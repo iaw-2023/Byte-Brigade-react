@@ -1,10 +1,10 @@
 import './globals.css';
-import { inter } from './ui/fonts';
-import Navbar from '@/app/ui/components/layout/Navbar';
-import Footer from './ui/components/layout/Footer';
+import { inter } from './lib/fonts';
+import Navbar from '@/app/ui/layout/Navbar';
+import Footer from './ui/layout/Footer';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
-import AuthPrompt from './ui/components/layout/AuthPrompt';
-import SpecialMessageAlert from './ui/components/layout/SpecialMessageAlert.jsx';
+import AuthPrompt from './ui/layout/AuthPrompt';
+import SpecialMessageAlert from './ui/layout/SpecialMessageAlert.jsx';
 
 
 export const metadata = {
