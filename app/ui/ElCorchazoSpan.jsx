@@ -1,3 +1,3 @@
 export default function ElCorchazoSpan() {
-    return <span className="font-serif font-semibold">El Corchazo</span>
+    return <span className="font-serif">El Corchazo</span>
 }

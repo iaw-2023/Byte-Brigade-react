@@ -7,13 +7,13 @@ export default function AuthPrompt() {
     const { user, error, isLoading } = useUser();
 
     let toRender = '';
-    const loadingMessage = 'Cargando como te cargaban en la escuela';
+    const loadingMessage = 'Cargando como te cargaban en la escuela...';
 
     if (isLoading)
         toRender = (
             <>
-                <div className="hidden md:flex space-x-2 items-center">
-                    <Spinner dimension="6" />
+                <div className="hidden md:flex space-x-2 items-center text-sm">
+                    <Spinner dimension="4" />
                     <p className="py-1">{loadingMessage}</p>
                 </div>
                 <div className="flex space-x-2 items-center md:hidden text-sm sm:text-md w-1/2">

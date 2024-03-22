@@ -10,19 +10,19 @@ export default function Error({ error, reset }) {
     }, []);
 
     return (
-        <div className="flex flex-col h-3/5 items-center justify-center">
-            <p className="text-xl uppercase font-bold">
+        <div className="flex flex-col h-96 items-center justify-center">
+            <p className="text-xl uppercase font-bold mb-2">
                 Error
             </p>
             <p className="text-center space-x-1">
                 <span className="inline-block">No se pudo cargar el contenido.</span>
                 <span className="inline-block">{`${errorText}`}</span>
             </p>
-            <button 
-                className="bg-red-300 mt-2 px-4 py-2 hover:bg-red-400 rounded-lg text-gray-100"
+            <button
+                className="bg-red-300 mt-8 px-4 py-2 hover:bg-red-400 rounded-lg text-gray-100"
                 onClick={reset}
             >
-                    Reintentar
+                Reintentar
             </button>
         </div>
     );
