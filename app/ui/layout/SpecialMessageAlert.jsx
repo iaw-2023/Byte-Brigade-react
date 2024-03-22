@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { fetchLatestEditorial } from '@/app/lib/data';
+import isEmptyObject from '@/app/lib/isEmptyObject';
 import ElCorchazo from '../ElCorchazoSpan';
 import Link from "next/link";
 
@@ -26,7 +27,7 @@ export default function SpecialMessageAlert() {
     }, []);
 
     useEffect(() => {
-        if (editorial) {
+        if (! isEmptyObject(editorial)) {
             if (pathname !== '/editorial') {
                 if (!showMessage) {
                     if (visitedPathsCount === pathCountThreshold) {
