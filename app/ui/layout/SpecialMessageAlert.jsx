@@ -49,9 +49,9 @@ export default function SpecialMessageAlert() {
     }
 
     return showMessage && (
-        <div className="bg-red-400 flex py-1 px-2 md:py-2 items-center justify-center border-b border-gray-100 border-opacity-80">
+        <div className="bg-red-300 flex py-1 px-2 md:py-2 items-center justify-center border-b border-gray-100 border-opacity-80">
             <Link className="text-gray-800 text-center grow" href="/editorial">
-                <span className="uppercase text-gray-100 mr-1 font-bold lg:w-3/4">Importante</span> Un mensaje del editor en jefe de <span className="inline-block"><ElCorchazo /></span>.
+                <span className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.5)] uppercase text-gray-100 mr-1 font-bold lg:w-3/4">Importante</span> Un mensaje del editor en jefe de <span className="inline-block"><ElCorchazo /></span>.
             </Link>
             <button
                 className="grow-0 mr-2"

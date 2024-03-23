@@ -30,7 +30,7 @@ export default async function Home() {
       <div className="mx-2 py-12 space-y-4 xl:w-4/5">
         <SeeAlso />
         <ArticleList articles={otherArticles} />
-        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="inline-block text-red-300 hover:text-red-500 font-semibold" href='/articulos'>VER MÁS</Link></p>
+        <p className="font-extralight uppercase text-gray-900 text-2xl">Sorprendente. Necesito <Link className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.3)] inline-block text-red-300 hover:text-red-500 font-semibold" href='/articulos'>VER MÁS</Link></p>
       </div>
     </div>
   );
