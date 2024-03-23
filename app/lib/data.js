@@ -27,9 +27,9 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
     }
 };
 
-export async function fetchLatestEditorial() {
+export async function fetchEditorial() {
     try {
-        const response = await axios.get(requests.editorials.latest);
+        const response = await axios.get(requests.editorial);
         return response.data;
     } catch (error) {
         throw new Error("Failed to retrieve the latest editorial.");

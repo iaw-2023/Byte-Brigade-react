@@ -1,11 +1,11 @@
-import { fetchLatestEditorial } from "../lib/data";
+import { fetchEditorial } from "../lib/data";
 import isEmptyObject from "../lib/isEmptyObject";
 import ElCorchazo from "../ui/ElCorchazoSpan";
 import { SpecialTag as TopicTag } from "../ui/TopicTags";
 import Link from "next/link";
 
 export default async function Page() {
-    const editorial = await fetchLatestEditorial();
+    const editorial = await fetchEditorial();
 
     return (
         <div className="flex flex-col gap-2">

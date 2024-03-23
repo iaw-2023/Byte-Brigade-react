@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { fetchLatestEditorial } from '@/app/lib/data';
+import { fetchEditorial } from '@/app/lib/data';
 import isEmptyObject from '@/app/lib/isEmptyObject';
 import ElCorchazo from '../ElCorchazoSpan';
 import Link from "next/link";
@@ -17,7 +17,7 @@ export default function SpecialMessageAlert() {
 
     useEffect(() => {
         async function fetchAndSetEditorial() {
-            const latestEditorial = await fetchLatestEditorial();
+            const latestEditorial = await fetchEditorial();
             setEditorial(latestEditorial);
             if (latestEditorial && pathname !== '/editorial') {
                 setShowMessage(true);

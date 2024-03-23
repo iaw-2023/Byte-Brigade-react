@@ -6,10 +6,7 @@ const requests = {
         fullArticle: (id) => `${URL}/articles/${id}`,
         like: (id) => `${URL}/articles/${id}/like`
     },
-    editorials: {
-        all: `${URL}/editorials`,
-        latest: `${URL}/editorials/latest`
-    },
+    editorial: `${URL}/editorial`,
     comments: (id) => `${URL}/articles/${id}/comments`,
     topics: `${URL}/topics`
 };
