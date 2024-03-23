@@ -27,20 +27,19 @@ export default function SpecialMessageAlert() {
     }, []);
 
     useEffect(() => {
-        if (! isEmptyObject(editorial)) {
-            if (pathname !== '/editorial') {
-                if (!showMessage) {
-                    if (visitedPathsCount === pathCountThreshold) {
-                        setVisitedPathsCount(0);
-                        setShowMessage(true);
-                    } else {
-                        setVisitedPathsCount(vpc => (vpc + 1));
-                    }
+        if (isEmptyObject(editorial)) return;
+        if (pathname !== '/editorial') {
+            if (!showMessage) {
+                if (visitedPathsCount === pathCountThreshold) {
+                    setVisitedPathsCount(0);
+                    setShowMessage(true);
+                } else {
+                    setVisitedPathsCount(vpc => (vpc + 1));
                 }
-            } else {
-                setVisitedPathsCount(0);
-                setShowMessage(false);
             }
+        } else {
+            setVisitedPathsCount(0);
+            setShowMessage(false);
         }
     }, [pathname]);
 
