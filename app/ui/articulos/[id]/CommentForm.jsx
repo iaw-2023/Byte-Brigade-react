@@ -12,20 +12,25 @@ export default function CommentForm({ articleId, setComments, user }) {
   async function handleSubmit(e) {
     e.preventDefault();
     setIsLoading(true);
-    try {
-      const formData = {
-        name: user.nickname,
-        text: formComment,
-      };
-      await postComment(articleId, formData);
-      setErrorMessage(null);
-      const newComments = await fetchComments(articleId);
-      setComments(newComments);
-      setFormComment("");
-    } catch (error) {
-      setErrorMessage(
-        "Se produjo un error al procesar la solicitud. Pegale al monitor e intentá nuevamente."
-      );
+    const formData = {
+      name: user.nickname,
+      text: formComment,
+    };
+    if (formComment === '') {
+      setErrorMessage("No seas pillo. Escribí algo.");
+    }
+    else {
+      try {
+        await postComment(articleId, formData);
+        setErrorMessage(null);
+        const newComments = await fetchComments(articleId);
+        setComments(newComments);
+        setFormComment("");
+      } catch (error) {
+        setErrorMessage(
+          "Se produjo un error al procesar la solicitud. Pegale al monitor e intentá nuevamente."
+        );
+      }
     }
     setIsLoading(false);
   }
@@ -37,24 +42,25 @@ export default function CommentForm({ articleId, setComments, user }) {
     >
       <textarea
         className={clsx(
-          "rounded-md grow border border-red-200 focus:outline-none p-2 focus:border-red-300 resize-none",
+          "rounded-md grow outline outline-1 resize-none p-2",
           {
             "bg-slate-300": isLoading,
             "bg-slate-50 focus:bg-slate-100": !isLoading,
+            "outline-red-200 focus:outline-red-300": !errorMessage,
+            "outline-red-400 focus:outline-red-500": errorMessage
           }
         )}
         name="text"
         id="text"
         value={formComment}
-        cols="30"
-        rows="6"
+        rows="4"
         disabled={isLoading}
         onChange={(e) => setFormComment(e.target.value)}
-        required
       />
-      <div className="flex justify-start align-middle gap-2">
+      <div className="flex items-center gap-2">
         <button
-          className="bg-red-400 inline-block hover:bg-red-500 active:bg-red-600 text-white font-medium max-w-fit py-2 px-6 border border-gray-300 rounded-lg"
+          className="bg-red-200 inline-block hover:bg-red-300 text-white font-medium max-w-fit py-2 px-6 rounded-lg
+            outline outline-1 outline-gray-200"
           type="submit"
           disabled={isLoading}
         >

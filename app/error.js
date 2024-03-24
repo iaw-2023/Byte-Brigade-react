@@ -22,7 +22,7 @@ export default function Error({ error, reset }) {
                 className="bg-red-300 mt-8 px-4 py-2 hover:bg-red-400 rounded-lg text-gray-100"
                 onClick={reset}
             >
-                Reintentar
+                <span className="drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.4)]">Reintentar</span>
             </button>
         </div>
     );
