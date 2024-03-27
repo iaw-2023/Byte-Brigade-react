@@ -31,7 +31,7 @@ export default async function Page() {
                             className="pl-6 pr-14 py-6 font-serif space-y-4 text-lg"
                             dangerouslySetInnerHTML={{ __html: editorial.body }}
                         />
-                        <div className="mt-12 mb-32">
+                        <div className="flex mt-12 mb-32 justify-center">
                             <FreeAndOpenSuggestion />
                         </div>
                     </>
