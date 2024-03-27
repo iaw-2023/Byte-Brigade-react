@@ -44,9 +44,7 @@ export default function TopicsRow() {
         }
       </div>
       {hiddenTopics.length > 0 && (
-        <div className="relative hidden xl:flex flex-col w-44 border-l border-gray-300 ml-10">
-          <ShowMore hiddenTopics={hiddenTopics} />
-        </div>
+        <ShowMore hiddenTopics={hiddenTopics} />
       )}
     </div>
   );
