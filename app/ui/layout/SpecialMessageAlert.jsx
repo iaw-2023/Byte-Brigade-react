@@ -55,7 +55,7 @@ export default function SpecialMessageAlert() {
             </Link>
             <button
                 className="grow-0 mr-2"
-                onClick={() => manageClick}
+                onClick={manageClick}
             >
                 ✖
             </button>
