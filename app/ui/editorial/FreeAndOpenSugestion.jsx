@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { CardBrick } from "@/app/ui/CardBrick";
-import clsx from 'clsx';
 
 export default function FreeAndOpenSuggestion() {
     const [status, setStatus] = useState('reading');
