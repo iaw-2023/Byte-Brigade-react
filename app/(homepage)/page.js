@@ -21,7 +21,9 @@ export default async function Home() {
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo" />
         </div>
         <div className="flex flex-col w-3/5 items-center space-y-2">
-          <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center"><ElCorchazo /></h1>
+          <h1 className="text-gray-950 flex-wrap text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-center font-bold">
+            <ElCorchazo />
+          </h1>
           <Subtitle />
         </div>
       </div>
