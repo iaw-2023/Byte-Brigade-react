@@ -1,0 +1,28 @@
+{
+    "theme_color": "#ffcbcb",
+    "background_color": "#fcfcfc",
+    "icons": [
+        {
+            "purpose": "maskable",
+            "sizes": "512x512",
+            "src": "icons/icon512_maskable.png",
+            "type": "image/png"
+        },
+        {
+            "purpose": "any",
+            "sizes": "512x512",
+            "src": "icons/icon512_rounded.png",
+            "type": "image/png"
+        }
+    ],
+    "orientation": "portrait",
+    "display": "standalone",
+    "dir": "auto",
+    "lang": "es-AR",
+    "name": "El Corchazo",
+    "short_name": "El Corchazo",
+    "start_url": "/",
+    "scope": "/",
+    "description": "Esto no es un pedido de ayuda.",
+    "id": "el-corchazo"
+}

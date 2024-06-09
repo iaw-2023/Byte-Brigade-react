@@ -10,6 +10,7 @@ import SpecialMessageAlert from './ui/layout/SpecialMessageAlert.jsx';
 export const metadata = {
   title: 'El Corchazo',
   description: 'Esto no es un pedido de ayuda.',
+  manifest: '/manifest.json'
 }
 
 export default function RootLayout({ children }) {
