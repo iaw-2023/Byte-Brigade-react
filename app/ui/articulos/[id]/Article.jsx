@@ -5,9 +5,9 @@ import { fetchArticleById } from "@/app/lib/data";
 
 export default async function Article({ articleId }) {
   const article = await fetchArticleById(articleId);
-  const author = article.author;
+  const author = article?.author;
 
-  return (
+  return article && (
     <article className="flex flex-col gap-y-3 min-h-fit h-26">
 
       {/* Categoría */}

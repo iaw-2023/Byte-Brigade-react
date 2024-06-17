@@ -23,7 +23,7 @@ export async function fetchArticles(page = 1, author = null, topic = null) {
             totalArticles: response.data.meta.total
         }
     } catch (error) {
-        throw new Error("Failed to fetch articles.");
+        return { articles: [], totalPages: 1, totalArticles: 0 };
     }
 };
 
@@ -32,7 +32,7 @@ export async function fetchEditorial() {
         const response = await axios.get(requests.editorial);
         return response.data;
     } catch (error) {
-        throw new Error("Failed to retrieve the latest editorial.");
+        return null;
     }
 }
 
@@ -41,7 +41,7 @@ export async function fetchTopics() {
         const response = await axios.get(requests.topics);
         return response.data;
     } catch (error) {
-        throw new Error("Failed to retrieve topics.");
+        return [];
     }
 }
 
@@ -50,7 +50,7 @@ export async function fetchArticleById(articleID) {
         const response = await axios.get(requests.articles.fullArticle(articleID));
         return response.data;
     } catch (error) {
-        throw new Error(`Failed to retrieve article ${articleID}.`);
+        return null;
     }
 }
 
@@ -60,7 +60,7 @@ export async function fetchComments(articleId) {
         const response = await axios.get(requests.comments(articleId));
         return response.data;
     } catch (error) {
-        throw new Error(`Failed to retrieve comments for article ${articleId}.`)
+        return [];
     }
 }
 

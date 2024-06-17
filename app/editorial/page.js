@@ -7,7 +7,7 @@ import FreeAndOpenSuggestion from "../ui/editorial/FreeAndOpenSugestion";
 export default async function Page() {
     const editorial = await fetchEditorial();
 
-    return (
+    return editorial && (
         <div className="flex flex-col gap-2">
             {
                 isEmptyObject(editorial) ? (
