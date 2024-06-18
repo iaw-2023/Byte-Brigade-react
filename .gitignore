@@ -37,7 +37,7 @@ next-env.d.ts
 .vercel
 
 # PWA
-**/public/workbox-*.js
-**/public/sw.js
-**/public/worker-*.js
-**/public/fallback-*.js
+**/public/workbox-*.js*
+**/public/sw.js*
+**/public/worker-*.js*
+**/public/fallback-*.js*

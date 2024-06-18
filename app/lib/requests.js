@@ -8,7 +8,9 @@ const requests = {
     },
     editorial: `${URL}/editorial`,
     comments: (id) => `${URL}/articles/${id}/comments`,
-    topics: `${URL}/topics`
+    topics: `${URL}/topics`,
+
+    usdExchange: "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/usd.json"
 };
 
 export default requests;

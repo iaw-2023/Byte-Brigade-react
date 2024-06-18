@@ -64,6 +64,18 @@ export async function fetchComments(articleId) {
     }
 }
 
+export async function fetchUsdExchange(currency) {
+    noStore();
+    try {
+        const response = await axios.get(requests.usdExchange);
+        const currencyExchange = response.data.usd[currency];
+        const truncatedExchange = Math.floor(currencyExchange * 100) / 100;
+        return truncatedExchange;
+    } catch (error) {
+        return 0;
+    }
+}
+
 export async function postComment(articleId, formData) {
     try {
         const { accessToken } = await getAccessToken();
