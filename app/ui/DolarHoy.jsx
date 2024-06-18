@@ -3,10 +3,12 @@
 import { useState, useEffect } from 'react';
 import { fetchUsdExchange } from '../lib/data';
 import { getDolarReaction } from '../lib/texts';
+import { usePathname } from 'next/navigation';
 
 export default function DolarHoy() {
     const [usdExchange, setUsdExchange] = useState(0);
     const [dolarReaction, setDolarReaction] = useState("");
+    const pathname = usePathname();
 
     useEffect(() => {
         async function refreshUsdExchange() {
@@ -17,7 +19,7 @@ export default function DolarHoy() {
         refreshUsdExchange();
     }, []);
 
-    return (usdExchange > 0) && (
+    return (usdExchange > 0) &&  (pathname === '/') && (
         <div
             className="flex flex-col xl:flex-row xl:gap-2
                 xl:text-lg text-md font-light"
