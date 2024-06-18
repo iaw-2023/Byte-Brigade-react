@@ -2,7 +2,7 @@ import './globals.css';
 import { inter } from './lib/fonts';
 import Navbar from '@/app/ui/layout/Navbar';
 import Footer from './ui/layout/Footer';
-import DolarHoy from './ui/DolarHoy';
+import DolarHoy from './ui/layout/DolarHoy';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 import AuthPrompt from './ui/layout/AuthPrompt';
 import SpecialMessageAlert from './ui/layout/SpecialMessageAlert.jsx';

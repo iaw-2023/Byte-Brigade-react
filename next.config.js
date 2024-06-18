@@ -9,6 +9,7 @@ const nextConfig = {
 
 const withPWA = require("@ducanh2912/next-pwa").default({
     dest: "public",
+    cacheOnFrontendNav: true,
     register: true,
     skipWaiting: true,
     extendDefaultRuntimeCaching: true,
