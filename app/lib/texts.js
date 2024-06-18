@@ -1,4 +1,17 @@
 
+const DOLAR_REACTION = [
+    'Que lo del corchazo quede en el título',
+    'Mamita querida',
+    'Esto es culpa de Arjona',
+    'Y ni se te ocurra pensar en el blue',
+    'De repente vivir a polenta no se ve tan mal',
+    '¿Qué vale una pelopincho?',
+    'Igual no quería tener gas en casa',
+    'Acordate cómo lloraste cuando se puso a 10',
+    'Oh yeah Mister Washington',
+    'Este verano vacaciones en Médanos'
+];
+
 
 const SUBTITLES = [
     '¿Qué vas a hacer?¿Leer La Brújula?',
@@ -117,6 +130,10 @@ export function getMayLike() {
 
 export function getError() {
     return getRandomElement(ERROR);
+}
+
+export function getDolarReaction() {
+    return getRandomElement(DOLAR_REACTION);
 }
 
 export function getNotFound() {

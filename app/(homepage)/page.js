@@ -3,6 +3,7 @@ import sources from '@/app/lib/sources';
 import { RandomSeeAlso as SeeAlso, RandomSubtitle as Subtitle } from '@/app/ui/RandomText';
 import { MainArticle, SmallerArticles } from '@/app/ui/ArticlePreviews';
 import { fetchArticles } from '@/app/lib/data';
+import DolarHoy from '../ui/DolarHoy';
 import ElCorchazo from '../ui/ElCorchazoSpan';
 import Link from 'next/link';
 import ArticleList from '@/app/ui/ArticleList';
@@ -16,6 +17,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col space-y-6">
+      <DolarHoy />
       <div className="flex justify-center items-center gap-4">
         <div className="w-72 h-72" style={{ position: "relative" }}>
           <Image className="object-scale-down" fill={true} src={sources.fullLogo} alt="Logo de El Corchazo" />
