@@ -42,9 +42,5 @@ export default function AuthPrompt() {
         );
     }
 
-    return (
-        <div className="flex font-light justify-end text-lg xl:text-xl mr-4 md:mr-10">
-            {toRender}
-        </div>
-    );
+    return <div className="text-lg xl:text-xl flex grow justify-end">{toRender}</div>;
 }

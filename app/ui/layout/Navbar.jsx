@@ -5,7 +5,7 @@ export default function Navbar() {
   return (
     <nav
       id="nav"
-      className="flex items-end font-light bg-gray-950 py-5 px-2 w-full mb-8 gap-4 border-0 border-b-2 border-gray-400"
+      className="flex items-end font-light bg-gray-950 py-5 px-2 w-full mb-4 xl:mb-6 gap-4 border-0 border-b-2 border-gray-400"
     >
       <Link href="/">
         <h1 className="text-gray-200 min-w-max font-serif text-4xl xl:text-5xl">

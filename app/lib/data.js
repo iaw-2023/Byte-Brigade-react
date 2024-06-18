@@ -68,12 +68,11 @@ export async function fetchUsdExchange(currency) {
     noStore();
     try {
         const response = await axios.get(requests.usdExchange);
-        exchange = response.data.usd[currency];
-        truncatedExchange = exchange.toFixed(2);
-        console.log(truncatedExchange);
+        const currencyExchange = response.data.usd[currency];
+        const truncatedExchange = Math.floor(currencyExchange * 100) / 100;
         return truncatedExchange;
     } catch (error) {
-        return null;
+        return 0;
     }
 }
 

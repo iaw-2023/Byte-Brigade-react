@@ -5,23 +5,24 @@ import { fetchUsdExchange } from '../lib/data';
 import { getDolarReaction } from '../lib/texts';
 
 export default function DolarHoy() {
-    const [usdExchange, setUsdExchange] = useState(null);
+    const [usdExchange, setUsdExchange] = useState(0);
     const [dolarReaction, setDolarReaction] = useState("");
 
     useEffect(() => {
-        async function getUsdExchange() {
-            const arsExchange = await fetchUsdExchange("ars");
-            setUsdExchange(arsExchange);
+        async function refreshUsdExchange() {
+            const newExchange = await fetchUsdExchange('ars');
+            setUsdExchange(newExchange);
         }
-        getUsdExchange();
         setDolarReaction(getDolarReaction());
+        refreshUsdExchange();
     }, []);
 
-    console.log(usdExchange);
-
-    return usdExchange && (
-        <div className="flex w-full gap-2">
-            <p>El dolar hoy está a {usdExchange}.</p>
+    return (usdExchange > 0) && (
+        <div
+            className="flex flex-col xl:flex-row xl:gap-2
+                xl:text-lg text-md font-light"
+        >
+            <p>El dolar hoy está a <span className='font-bold'>${ usdExchange }</span></p>
             <p>{dolarReaction}</p>
         </div>
     );
