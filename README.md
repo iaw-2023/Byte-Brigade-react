@@ -1,34 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# El Corchazo
 
-## Getting Started
+__El Corchazo__ es el lugar para ponerte al día con todas las cosas que definitivamente pasaron a través de artículos que bajo ningún punto de vista son un comentario encubierto a [todo eso que me resulta condenable](https://el-corchazo.vercel.app/articulos/19).
 
-First, run the development server:
+## Nuestros escritores
+En  no entendemos de fronteras al momento de recrutar a los mejores talentos para que escriban nuestro artículos. Y cuando hablamos de fronteras no nos limitamos a las geográficas: las distinciones [jerárquicas](https://el-corchazo.vercel.app/articulos?author=5), [tecnológicas](https://el-corchazo.vercel.app/articulos?author=4) e incluso [terrenales](https://el-corchazo.vercel.app/articulos?author=2) no nos son impedimento para llevarte toda la data que estarías mejor no sabiando.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## Nuestras categorías
+- [Ciencias duras](https://el-corchazo.vercel.app/articulos?topic=9)
+- [Internacionales](https://el-corchazo.vercel.app/articulos?topic=10)
+- ["Arte"](https://el-corchazo.vercel.app/articulos?topic=11)
+- [Policiales](https://el-corchazo.vercel.app/articulos?topic=12)
+- [Política](https://el-corchazo.vercel.app/articulos?topic=1)
+- [Espectáculos y p***río](https://el-corchazo.vercel.app/articulos?topic=2) (cuando me cierren la nota lo cambiamos 😜😜😜😜😜)
+- [Hechicería y macumbas](https://el-corchazo.vercel.app/articulos?topic=6)
+- [Admin](https://el-corchazo.vercel.app/articulos?topic=8) (es un chistazo, no lo entenderías)
+Y [muchos otros](https://el-corchazo.vercel.app/categorias) que me da fiaca copiar.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Nuestros tragos
+No (aunque nunca digas nunca).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Todo eso y _mucho_ más, en [El Corchazo](https://el-corchazo.vercel.app/).
