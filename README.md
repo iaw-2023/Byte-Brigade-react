@@ -11,9 +11,10 @@ En __El Corchazo__ no entendemos de fronteras al momento de recrutar a los mejor
 - ["Arte"](https://el-corchazo.vercel.app/articulos?topic=11)
 - [Policiales](https://el-corchazo.vercel.app/articulos?topic=12)
 - [Política](https://el-corchazo.vercel.app/articulos?topic=1)
-- [Espectáculos y p***río](https://el-corchazo.vercel.app/articulos?topic=2) (cuando me cierren la nota lo cambiamos 😜😜😜😜😜)
+- [Espectáculos y p***río](https://el-corchazo.vercel.app/articulos?topic=2)
 - [Hechicería y macumbas](https://el-corchazo.vercel.app/articulos?topic=6)
 - [Admin](https://el-corchazo.vercel.app/articulos?topic=8) (es un chistazo, no lo entenderías)
+
 Y [muchos otros](https://el-corchazo.vercel.app/categorias) que me da fiaca copiar.
 
 ## Nuestros tragos
