@@ -18,9 +18,9 @@ export default function SpecialMessageAlert() {
     useEffect(() => {
         async function fetchAndSetEditorial() {
             const latestEditorial = await fetchEditorial();
-            if (editorial)
+            if (latestEditorial)
                 setEditorial(latestEditorial);
-            if (latestEditorial && pathname !== '/editorial') {
+            if (!isEmptyObject(latestEditorial) && pathname !== '/editorial') {
                 setShowMessage(true);
             }
         }
